@@ -53,3 +53,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   MayhemBar: {fileID: 0}
   maxLevelMayhem: 100
+  animationSpeed: 0.2
