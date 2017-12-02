@@ -29,19 +29,17 @@ public abstract class Guest : MonoBehaviour {
 	protected float musicDelay = 2f;
 
 
-	void Awake ()
-	{
+	void Awake () {
 		manager = FindObjectOfType<EnemyManager> ().GetComponent<EnemyManager> ();
+		state.Enqueue (GuestStates.Thirsty);
 	}
 
-	protected virtual void Start ()
-	{
+	protected virtual void Start () {
 		StartCoroutine (ThirstTimer ());
 		StartCoroutine (HungerTimer ());
 	}
 
-	protected virtual void Update ()
-	{
+	protected virtual void Update () {
 		if (state.Count != 0) {
 			switch (state.Peek())
 			{
