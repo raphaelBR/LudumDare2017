@@ -377,11 +377,37 @@ Transform:
   m_GameObject: {fileID: 504094192}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0.5, z: 3.83}
-  m_LocalScale: {x: 8.797742, y: 13.852079, z: 1}
+  m_LocalScale: {x: 6.6239367, y: 13.852079, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &519824057 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 1811634696585840, guid: ddc4cb4a6b48ae847b2b45f046596b41,
+    type: 2}
+  m_PrefabInternal: {fileID: 880732057}
+--- !u!195 &519824058
+NavMeshAgent:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 519824057}
+  m_Enabled: 1
+  m_AgentTypeID: 0
+  m_Radius: 0.5
+  m_Speed: 3.5
+  m_Acceleration: 8
+  avoidancePriority: 50
+  m_AngularSpeed: 120
+  m_StoppingDistance: 0
+  m_AutoTraverseOffMeshLink: 1
+  m_AutoBraking: 1
+  m_AutoRepath: 1
+  m_Height: 1
+  m_BaseOffset: 0.5
+  m_WalkableMask: 4294967295
+  m_ObstacleAvoidanceType: 4
 --- !u!1001 &541973487
 Prefab:
   m_ObjectHideFlags: 0
