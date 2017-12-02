@@ -4,4 +4,16 @@
 EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
-  m_Scenes: []
+  m_Scenes:
+  - enabled: 1
+    path: Assets/_Scenes/Level.unity
+    guid: e74f129d02035834f860b84a9561e5d9
+  - enabled: 1
+    path: Assets/_Scenes/Menu.unity
+    guid: 3e4f4fa2c6c5a1f45bfe2b313b56d3d0
+  - enabled: 1
+    path: Assets/_Scenes/ZooRaph.unity
+    guid: bbafd8741b99ad946b85bf4a98f86f27
+  - enabled: 1
+    path: Assets/_Scenes/ZooSyny.unity
+    guid: a75288c69673ef54291e303955c1429a
