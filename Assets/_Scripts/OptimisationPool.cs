@@ -9,6 +9,9 @@ public class OptimisationPool : MonoBehaviour {
 
 	public List<GameObject> reserve;
 
+	[HideInInspector]
+	public List<GameObject> actives;
+
 	GameObject Create () {
 		GameObject o = Instantiate (prefab.gameObject, transform);
 		reserve.Add (o);
@@ -29,6 +32,7 @@ public class OptimisationPool : MonoBehaviour {
 		item.transform.localScale = transform.localScale;
 		item.SetActive (true);
 		reserve.Remove (item);
+		actives.Add (item);
 		return item;
 	}
 }
