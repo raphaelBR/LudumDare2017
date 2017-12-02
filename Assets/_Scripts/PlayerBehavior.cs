@@ -5,7 +5,10 @@ using UnityEngine.AI;
 
 [RequireComponent(typeof(NavMeshAgent))]
 public class PlayerBehavior : MonoBehaviour {
-	
+
+	public enum Item {None, Mop, Pizza}
+	public Item item = Item.None;
+
 	private NavMeshAgent agent;
 
 	void Start () {

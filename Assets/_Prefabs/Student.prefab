@@ -24,9 +24,9 @@ GameObject:
   - component: {fileID: 23364885610120044}
   - component: {fileID: 114314375778255522}
   - component: {fileID: 195433796875675718}
-  - component: {fileID: 114432287177047476}
+  - component: {fileID: 114666450788184962}
   m_Layer: 0
-  m_Name: Enemy
+  m_Name: Student
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -59,7 +59,7 @@ MeshRenderer:
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
   m_Materials:
-  - {fileID: 2100000, guid: a81b11266d463374ba49f5033f4dbd1e, type: 2}
+  - {fileID: 2100000, guid: f70f561be435c924b9a19220f0196e3f, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -98,7 +98,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   pool: {fileID: 0}
---- !u!114 &114432287177047476
+--- !u!114 &114666450788184962
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
@@ -106,15 +106,18 @@ MonoBehaviour:
   m_GameObject: {fileID: 1811634696585840}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e80eebd4b8bd508498a5d94c5489e94f, type: 3}
+  m_Script: {fileID: 11500000, guid: 547bc413de71c5841b9ebad5b8328b25, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  destinationMinX: -5
-  destinationMaxX: 5
-  destinationMinZ: -5
-  destinationMaxZ: 5
-  waitingDelayMin: 3
-  waitingDelayMax: 3
+  waitingDelayMin: 10
+  waitingDelayMax: 15
+  alcoolismLevel: 0
+  alcoolismLimit: 0
+  alcoolismRate: 10
+  thirstDelay: 2
+  hungerDelay: 2
+  musicDelay: 2
+  state: 0
 --- !u!135 &135500250469701454
 SphereCollider:
   m_ObjectHideFlags: 1
@@ -136,7 +139,7 @@ NavMeshAgent:
   m_Enabled: 1
   m_AgentTypeID: 0
   m_Radius: 0.5
-  m_Speed: 3.5
+  m_Speed: 5
   m_Acceleration: 8
   avoidancePriority: 50
   m_AngularSpeed: 120

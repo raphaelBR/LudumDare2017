@@ -55,13 +55,16 @@
      <Compile Include="Assets\_Scripts\ColliderExtension.cs" />
      <Compile Include="Assets\_Scripts\Detection.cs" />
      <Compile Include="Assets\_Scripts\EndOfScene.cs" />
-     <Compile Include="Assets\_Scripts\Enemy.cs" />
      <Compile Include="Assets\_Scripts\EnemyManager.cs" />
      <Compile Include="Assets\_Scripts\EventManager.cs" />
+     <Compile Include="Assets\_Scripts\Friend.cs" />
+     <Compile Include="Assets\_Scripts\Guest.cs" />
      <Compile Include="Assets\_Scripts\OptimisationItem.cs" />
      <Compile Include="Assets\_Scripts\OptimisationPool.cs" />
+     <Compile Include="Assets\_Scripts\Party.cs" />
      <Compile Include="Assets\_Scripts\PatrolRoute.cs" />
      <Compile Include="Assets\_Scripts\PlayerBehavior.cs" />
+     <Compile Include="Assets\_Scripts\Student.cs" />
      <Compile Include="Assets\_Scripts\TransformExtension.cs" />
  <Reference Include="UnityEngine.UI">
  <HintPath>C:/Program Files/Unity/Editor/Data/UnityExtensions/Unity/GUISystem/UnityEngine.UI.dll</HintPath>

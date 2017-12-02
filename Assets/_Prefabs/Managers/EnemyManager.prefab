@@ -11,6 +11,22 @@ Prefab:
   m_ParentPrefab: {fileID: 0}
   m_RootGameObject: {fileID: 1065215615074104}
   m_IsPrefabParent: 1
+--- !u!1 &1005165359823914
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 4316568009864152}
+  - component: {fileID: 114565220529936758}
+  m_Layer: 0
+  m_Name: SpawnerParty
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
 --- !u!1 &1065215615074104
 GameObject:
   m_ObjectHideFlags: 0
@@ -19,8 +35,8 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4503056365320382}
-  - component: {fileID: 114882105728018988}
   - component: {fileID: 114123515891936032}
+  - component: {fileID: 114619342893895568}
   m_Layer: 0
   m_Name: EnemyManager
   m_TagString: Untagged
@@ -28,6 +44,64 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!1 &1153396840682218
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 4655803792085626}
+  - component: {fileID: 114908260548398818}
+  m_Layer: 0
+  m_Name: SpawnerStudent
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!1 &1951395175173224
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 4049811967013718}
+  - component: {fileID: 114297868637763952}
+  m_Layer: 0
+  m_Name: SpawnerFriend
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &4049811967013718
+Transform:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1951395175173224}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 4503056365320382}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!4 &4316568009864152
+Transform:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1005165359823914}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 4503056365320382}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &4503056365320382
 Transform:
   m_ObjectHideFlags: 1
@@ -35,11 +109,27 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1065215615074104}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 10, y: 0, z: 1.75}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 4049811967013718}
+  - {fileID: 4655803792085626}
+  - {fileID: 4316568009864152}
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!4 &4655803792085626
+Transform:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1153396840682218}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 0
+  m_Father: {fileID: 4503056365320382}
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &114123515891936032
 MonoBehaviour:
@@ -52,9 +142,45 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c060cdbc6aa56c348800f3a43a4e1135, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  friendPool: {fileID: 114297868637763952}
+  studentPool: {fileID: 114908260548398818}
+  partyPool: {fileID: 114565220529936758}
   quantityIncrement: 1
-  delayIncrement: 1
---- !u!114 &114882105728018988
+  delayIncrement: 500
+  gardenLimits: {fileID: 0}
+  kitchenLimits: {fileID: 0}
+  diningLimits: {fileID: 0}
+  bedroomLimits: {fileID: 0}
+  toiletsLimits: {fileID: 0}
+--- !u!114 &114297868637763952
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1951395175173224}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3918acf02662f8841a7cce519a83055a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  prefab: {fileID: 114314375778255522, guid: ddc4cb4a6b48ae847b2b45f046596b41, type: 2}
+  reserve: []
+  actives: []
+--- !u!114 &114565220529936758
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1005165359823914}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3918acf02662f8841a7cce519a83055a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  prefab: {fileID: 114314375778255522, guid: 236d6aed640b8574baa90da9cb61bdb3, type: 2}
+  reserve: []
+  actives: []
+--- !u!114 &114619342893895568
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
@@ -62,9 +188,20 @@ MonoBehaviour:
   m_GameObject: {fileID: 1065215615074104}
   m_Enabled: 1
   m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2842fd784be3617428b8921ea1acfbb9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &114908260548398818
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1153396840682218}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 3918acf02662f8841a7cce519a83055a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  prefab: {fileID: 114314375778255522, guid: ddc4cb4a6b48ae847b2b45f046596b41, type: 2}
+  prefab: {fileID: 114314375778255522, guid: 61a5c04bb1ad9a8489909a262e1e629e, type: 2}
   reserve: []
   actives: []
