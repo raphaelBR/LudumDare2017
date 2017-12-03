@@ -87,7 +87,7 @@ public abstract class Guest : MonoBehaviour {
 	}
 
 	protected virtual void Update () {
-
+		
 		timer += Time.deltaTime;
 
 		if ( unsatisfied && timer >= 1) {
@@ -107,9 +107,14 @@ public abstract class Guest : MonoBehaviour {
 			{
 			case GuestStates.Hungry:
 				Hungry ();
+				Move (EnemyManager.Rooms.Kitchen);
 				break;
 			case GuestStates.Thirsty:
+				Move (EnemyManager.Rooms.Dining);
 				Thirsty ();
+				break;
+			case GuestStates.Sick:
+				Move (EnemyManager.Rooms.Bedroom);
 				break;
 			default:
 				break;
@@ -117,21 +122,33 @@ public abstract class Guest : MonoBehaviour {
 		}
 	}
 
+	void DespawnBeer(){
+		eventmanager.beerSource.actives[0].GetComponent<OptimisationItem> ().Despawn ();	
+	}
+
+	void DespawnJuice(){
+		eventmanager.juiceSource.actives[0].GetComponent<OptimisationItem> ().Despawn ();
+	}
+
+	void DespawnVodka(){
+		eventmanager.vodkaSource.actives[0].GetComponent<OptimisationItem> ().Despawn ();
+	}
+
 	protected virtual void DrinkAlcohol ()
 	{
 		if (eventmanager.beerSource.actives.Count > 0) {
 			alcoolismLevel += alcoolismRate;
 //			Debug.Log ("I drink beer / Alcolism level at " + alcoolismLevel);
-			eventmanager.beerSource.actives[0].GetComponent<OptimisationItem> ().Despawn ();
+			Invoke("DespawnBeer", 2);
 			Satisfy ();
 		}else if(eventmanager.juiceSource.actives.Count > 0){
 //			Debug.Log ("I drink Juice / Alcolism level at " + alcoolismLevel);
-			eventmanager.juiceSource.actives[0].GetComponent<OptimisationItem> ().Despawn ();
+			Invoke("DespawnJuicer", 2);
 			Satisfy ();
 		}else if(eventmanager.vodkaSource.actives.Count > 0){
 			alcoolismLevel += alcoolismRate;
+			Invoke("DespawnVodka", 2);
 //			Debug.Log ("I drink Vodka / Alcolism level at " + alcoolismLevel);
-			eventmanager.vodkaSource.actives[0].GetComponent<OptimisationItem> ().Despawn ();
 			Satisfy ();
 		}
 		else {
@@ -141,17 +158,27 @@ public abstract class Guest : MonoBehaviour {
 		}
 	}
 
+
+	void DespawnPizza(){
+		eventmanager.pizzaSource.actives[0].GetComponent<OptimisationItem>().Despawn ();
+	}
+
+	void DespawnChips(){
+		eventmanager.chipsSource.actives[0].GetComponent<OptimisationItem>().Despawn ();
+	}
+
+
 	protected virtual void EatFood()
 	{
 		if (eventmanager.pizzaSource.actives.Count > 0) {
 //			Debug.Log ("Eating Pizza");
-			eventmanager.pizzaSource.actives[0].GetComponent<OptimisationItem>().Despawn ();
+			Invoke(" DespawnPizza", 2);
 			Satisfy ();
 		}
 		else if(eventmanager.chipsSource.actives.Count > 0)
 		{
 //			Debug.Log ("Eating Chips");
-			eventmanager.chipsSource.actives[0].GetComponent<OptimisationItem>().Despawn ();
+			Invoke("DespawnChips", 2);
 			Satisfy ();
 		}
 		else {
@@ -163,21 +190,13 @@ public abstract class Guest : MonoBehaviour {
 
 	protected virtual void Hungry ()
 	{
-		
 		EatFood ();
 	}
 	protected virtual void Move (EnemyManager.Rooms room = EnemyManager.Rooms.Null)
 	{
 		agent.SetDestination (manager.GiveDestination(agent.transform.position.y, room));
-		StartCoroutine (Wait ());
 	}
-
-	protected IEnumerator Wait ()
-	{
-		yield return new WaitForSeconds (Random.Range (waitingDelayMin, waitingDelayMax));
-		Move ();
-	}
-
+		
 	protected virtual void Thirsty ()
 	{
 		DrinkAlcohol();

@@ -20,7 +20,6 @@ public class Friend : Guest {
 		hungerDelay = 4f;		//How long Before Student wants to eat
 		alcoolismLimit = 30f;
 		alcoolismLevel = 0f;
-		Move ();
 		base.Start ();
 	}
 
