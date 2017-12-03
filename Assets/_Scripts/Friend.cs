@@ -10,6 +10,8 @@ public class Friend : Guest {
 
 	protected override void Start ()
 	{
+		alcoolismLimit = 30f;
+		alcoolismLevel = 0f;
 		Move ();
 		base.Start ();
 	}
@@ -17,9 +19,8 @@ public class Friend : Guest {
 	protected override void Update ()
 	{
 		//Friend's alcolism reashed 30
-		if (alcoolismLevel >= alcoolismLimit && !state.Contains(GuestStates.Sick))
-		{
-			state.Clear();
+		if (alcoolismLevel >= alcoolismLimit && !state.Contains (GuestStates.Sick)) {
+			state.Clear ();
 			state.Enqueue (GuestStates.Sick);
 			Debug.Log ("I m going to puke in " + pukeDelay);
 			ChangeLayer (1);
@@ -57,6 +58,7 @@ public class Friend : Guest {
 		Debug.Log (" Friend Puking");
 		state.Clear ();
 		ResetAlcolismLevel (10);
+		ChangeLayer (0);
 		base.Puke ();
 	}
 

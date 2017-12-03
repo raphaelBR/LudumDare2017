@@ -92,7 +92,7 @@ Animator:
   m_GameObject: {fileID: 1810657144743350}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 9ce25a3028c405d4d8de6bf79b49b546, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -164,8 +164,8 @@ MonoBehaviour:
   waitingDelayMax: 15
   alcoolismLevel: 0
   alcoolismLimit: 0
-  alcoolismRate: 10
-  thirstDelay: 1.5
+  alcoolismRate: 3
+  thirstDelay: 3
   hungerDelay: 5
   musicDelay: 2
   pukeDelay: 10

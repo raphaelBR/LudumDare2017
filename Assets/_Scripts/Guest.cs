@@ -53,7 +53,7 @@ public abstract class Guest : MonoBehaviour {
 	}
 
 	protected virtual void Update () {
-		if (agent.isStopped == true) {
+		if (agent.velocity == Vector3.zero) {
 			anim.SetBool ("Moving", false);
 		} else {
 			anim.SetBool ("Moving", true);
@@ -102,7 +102,7 @@ public abstract class Guest : MonoBehaviour {
 		if (!state.Contains (GuestStates.Thirsty) && !state.Contains(GuestStates.Sick)
 			&& !state.Contains(GuestStates.Fighting))
 		{
-			//Debug.Log ("Adding Thirsty State");
+			Debug.Log ("Adding Thirsty State");
 			state.Enqueue (GuestStates.Thirsty);
 		}
 		StartCoroutine (ThirstTimer ());
@@ -114,7 +114,7 @@ public abstract class Guest : MonoBehaviour {
 		if (!state.Contains (GuestStates.Hungry) && !state.Contains(GuestStates.Sick)
 			&& !state.Contains(GuestStates.Fighting))
 		{
-			//Debug.Log ("Adding Hungry State");
+			Debug.Log ("Adding Hungry State");
 			state.Enqueue (GuestStates.Hungry);
 		}
 		StartCoroutine (HungerTimer ());

@@ -594,6 +594,12 @@ Camera:
   m_OcclusionCulling: 1
   m_StereoConvergence: 10
   m_StereoSeparation: 0.022
+--- !u!114 &355915559 stripped
+MonoBehaviour:
+  m_PrefabParentObject: {fileID: 114565220529936758, guid: 305da2a6cdbfc694a9aec0efdbc2675f,
+    type: 2}
+  m_PrefabInternal: {fileID: 364998687}
+  m_Script: {fileID: 11500000, guid: 3918acf02662f8841a7cce519a83055a, type: 3}
 --- !u!1 &360816141
 GameObject:
   m_ObjectHideFlags: 0
@@ -745,8 +751,23 @@ Prefab:
     - target: {fileID: 114123515891936032, guid: 305da2a6cdbfc694a9aec0efdbc2675f,
         type: 2}
       propertyPath: quantityIncrement
-      value: 1
+      value: -1
       objectReference: {fileID: 0}
+    - target: {fileID: 114123515891936032, guid: 305da2a6cdbfc694a9aec0efdbc2675f,
+        type: 2}
+      propertyPath: delayIncrement
+      value: 500
+      objectReference: {fileID: 0}
+    - target: {fileID: 114123515891936032, guid: 305da2a6cdbfc694a9aec0efdbc2675f,
+        type: 2}
+      propertyPath: studentPool
+      value: 
+      objectReference: {fileID: 1951562015}
+    - target: {fileID: 114123515891936032, guid: 305da2a6cdbfc694a9aec0efdbc2675f,
+        type: 2}
+      propertyPath: partyPool
+      value: 
+      objectReference: {fileID: 355915559}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 305da2a6cdbfc694a9aec0efdbc2675f, type: 2}
   m_IsPrefabParent: 0
@@ -1783,6 +1804,12 @@ Prefab:
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 8b3369db87d185b42b6d0a351cf352aa, type: 2}
   m_IsPrefabParent: 0
+--- !u!114 &1951562015 stripped
+MonoBehaviour:
+  m_PrefabParentObject: {fileID: 114908260548398818, guid: 305da2a6cdbfc694a9aec0efdbc2675f,
+    type: 2}
+  m_PrefabInternal: {fileID: 364998687}
+  m_Script: {fileID: 11500000, guid: 3918acf02662f8841a7cce519a83055a, type: 3}
 --- !u!1001 &2035317867
 Prefab:
   m_ObjectHideFlags: 0

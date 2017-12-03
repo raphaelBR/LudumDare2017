@@ -37,6 +37,7 @@ public class Student : Guest {
 			state.Clear();
 			state.Enqueue (GuestStates.Fighting);
 			Debug.Log ("Student Will start Fighting in " + fightDelay);
+			ChangeLayer (2);
 			Invoke ("Fight", fightDelay);
 		}
 
@@ -45,6 +46,7 @@ public class Student : Guest {
 			state.Clear ();
 			state.Enqueue (GuestStates.Sick);
 			Debug.Log ("Student is going to puke in " + pukeDelay);
+			ChangeLayer (1);
 			Invoke ("Puke", pukeDelay);
 		}
 
@@ -86,6 +88,7 @@ public class Student : Guest {
 		state.Clear ();
 		ResetAlcolismLevel (20);
 		fought = false;
+		ChangeLayer (0);
 		base.Puke ();
 	}
 
@@ -93,5 +96,6 @@ public class Student : Guest {
 	{
 		fought = true;
 		state.Clear ();
+		ChangeLayer (0);
 	}
 }

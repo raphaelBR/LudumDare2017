@@ -31,6 +31,7 @@ public class Party: Guest {
 			alcoolismRate *= 2;
 			turboMode = true;
 			Debug.Log ("Party Guy is drinking turbo mode");
+			ChangeLayer (1);
 		}
 
 		if (alcoolismLevel >= partyGuyHighLevel && !state.Contains(GuestStates.High))
@@ -79,5 +80,6 @@ public class Party: Guest {
 		turboMode = false;
 		state.Clear();
 		ResetAlcolismLevel(40);
+		ChangeLayer (0);
 	}
 }
