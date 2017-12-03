@@ -59,6 +59,7 @@ public class Friend : Guest {
 	void Puke()
 	{
 		Debug.Log (" Friend Puking");
+		eventmanager.IncreaseMayhem (10);
 		state.Clear ();
 		ResetAlcolismLevel (10);
 	}

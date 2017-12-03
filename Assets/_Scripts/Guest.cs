@@ -8,6 +8,8 @@ public abstract class Guest : MonoBehaviour {
 
 	public Queue<GuestStates> state = new Queue<GuestStates> ();
 
+	protected EventManager eventmanager;
+
 	[SerializeField]
 	protected float waitingDelayMin = 10f;
 	[SerializeField]
@@ -31,6 +33,8 @@ public abstract class Guest : MonoBehaviour {
 
 	void Awake () {
 		manager = FindObjectOfType<EnemyManager> ().GetComponent<EnemyManager> ();
+		eventmanager = FindObjectOfType<EventManager> ().GetComponent<EventManager>();
+
 		state.Enqueue (GuestStates.Thirsty);
 	}
 
