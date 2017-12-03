@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class EnemyManager : MonoBehaviour {
 
-	public enum Rooms {Kitchen, Dining, Bedroom}
+	public enum Rooms {Kitchen, Dining, Bedroom, Table, Null}
 
 	public OptimisationPool friendPool;
 	public OptimisationPool studentPool;
@@ -19,6 +19,7 @@ public class EnemyManager : MonoBehaviour {
 	public Transform kitchenLimits;
 	public Transform diningLimits;
 	public Transform bedroomLimits;
+	public Transform tableLimits;
 
 	void Awake () {
 		StartCoroutine (Spawning ());
@@ -58,9 +59,12 @@ public class EnemyManager : MonoBehaviour {
 		StartCoroutine (Spawning ());
 	}
 
-	public Vector3 GiveDestination (float constantY) {
+	public Vector3 GiveDestination (float constantY, Rooms room = Rooms.Null) {
+		if (room == Rooms.Null) {
+			room = (Rooms)Random.Range (0, System.Enum.GetValues (typeof(Rooms)).Length - 2);
+		}
 		Transform roomTransform;
-		switch ((Rooms)Random.Range (0, System.Enum.GetValues (typeof(Rooms)).Length)) {
+		switch (room) {
 		case Rooms.Kitchen:
 			roomTransform = kitchenLimits;
 			break;
@@ -70,8 +74,11 @@ public class EnemyManager : MonoBehaviour {
 		case Rooms.Bedroom:
 			roomTransform = bedroomLimits;
 			break;
+		case Rooms.Table:
+			roomTransform = tableLimits;
+			break;
 		default:
-			roomTransform = diningLimits;
+			roomTransform = tableLimits;
 			break;
 		}
 		return new Vector3 (Random.Range (roomTransform.position.x + roomTransform.lossyScale.x / 2, roomTransform.position.x - roomTransform.lossyScale.x / 2), 	constantY, Random.Range (roomTransform.position.z + roomTransform.lossyScale.z / 2, roomTransform.position.z - roomTransform.lossyScale.z / 2));

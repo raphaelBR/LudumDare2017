@@ -10,8 +10,20 @@ public class PizzaGuy : MonoBehaviour {
 
 	private NavMeshAgent agent;
 
+	private Animator anim;
+
 	void Start () {
 		agent = GetComponent<NavMeshAgent> ();
+		anim = GetComponentInChildren<Animator> ();
+		GoHome ();
+	}
+
+	void Update() {
+		if (agent.velocity == Vector3.zero) {
+			anim.SetBool ("Moving", false);
+		} else {
+			anim.SetBool ("Moving", true);
+		}
 	}
 
 	public void GoHome () {

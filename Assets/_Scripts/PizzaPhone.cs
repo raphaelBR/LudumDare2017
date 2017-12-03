@@ -16,13 +16,15 @@ public class PizzaPhone : MonoBehaviour {
 	public void Call () {
 		if (available == true) {
 			dude.Deliver ();
+			StartCoroutine (Cooldown ());
 		}
 	}
 
 	IEnumerator Cooldown () {
 		available = false;
+		phone.enabled = false;
+		yield return new WaitForSeconds (cooldownDelay);
+		phone.enabled = true;
+		available = true;
 	}
-
-	
-
 }
