@@ -42,6 +42,24 @@ public abstract class Guest : MonoBehaviour {
 
 	protected NavMeshAgent agent;
 
+	[SerializeField]
+	protected ParticleSystem fightParticles;
+	[SerializeField]
+	protected ParticleSystem weedParticles;
+
+	[SerializeField]
+	protected SpriteRenderer sickBubble;
+	[SerializeField]
+	protected SpriteRenderer cleanBubble;
+	[SerializeField]
+	protected SpriteRenderer drinkBubble;
+	[SerializeField]
+	protected SpriteRenderer foodBubble;
+	[SerializeField]
+	protected SpriteRenderer weedBubble;
+	[SerializeField]
+	protected SpriteRenderer madBubble;
+
 
 	void Awake () {
 		agent = GetComponent<NavMeshAgent> ();
@@ -85,41 +103,43 @@ public abstract class Guest : MonoBehaviour {
 	{
 		if (eventmanager.beerSource.actives.Count > 0) {
 			alcoolismLevel += alcoolismRate;
-			Debug.Log ("I drink beer / Alcolism level at " + alcoolismLevel);
+//			Debug.Log ("I drink beer / Alcolism level at " + alcoolismLevel);
 			eventmanager.beerSource.actives[0].GetComponent<OptimisationItem> ().Despawn ();
 			Satisfy ();
 		}else if(eventmanager.juiceSource.actives.Count > 0){
-			Debug.Log ("I drink Juice / Alcolism level at " + alcoolismLevel);
+//			Debug.Log ("I drink Juice / Alcolism level at " + alcoolismLevel);
 			eventmanager.juiceSource.actives[0].GetComponent<OptimisationItem> ().Despawn ();
 			Satisfy ();
 		}
 
 		if(eventmanager.vodkaSource.actives.Count > 0){
 			alcoolismLevel += alcoolismRate;
-			Debug.Log ("I drink Vodka / Alcolism level at " + alcoolismLevel);
+//			Debug.Log ("I drink Vodka / Alcolism level at " + alcoolismLevel);
 			eventmanager.vodkaSource.actives[0].GetComponent<OptimisationItem> ().Despawn ();
 			Satisfy ();
 		}
 		else {
-			Debug.Log ("There is no Drinks");
+//			Debug.Log ("There is no Drinks");
+			StartCoroutine (ToggleBubble (drinkBubble));
 		}
 	}
 
 	protected virtual void EatFood()
 	{
 		if (eventmanager.pizzaSource.actives.Count > 0) {
-			Debug.Log ("Eating Pizza");
+//			Debug.Log ("Eating Pizza");
 			eventmanager.pizzaSource.actives[0].GetComponent<OptimisationItem>().Despawn ();
 			Satisfy ();
 		}
 		else if(eventmanager.chipsSource.actives.Count > 0)
 		{
-			Debug.Log ("Eating Chips");
+//			Debug.Log ("Eating Chips");
 			eventmanager.chipsSource.actives[0].GetComponent<OptimisationItem>().Despawn ();
 			Satisfy ();
 		}
 		else {
-			Debug.Log ("There is no food");
+			StartCoroutine (ToggleBubble (foodBubble));
+//			Debug.Log ("There is no food");
 		}
 	}
 
@@ -143,7 +163,7 @@ public abstract class Guest : MonoBehaviour {
 		if (!state.Contains (GuestStates.Thirsty) && !state.Contains(GuestStates.Sick)
 			&& !state.Contains(GuestStates.Fighting))
 		{
-			Debug.Log ("Adding Thirsty State");
+//			Debug.Log ("Adding Thirsty State");
 			state.Enqueue (GuestStates.Thirsty);
 		}
 		StartCoroutine (ThirstTimer ());
@@ -155,7 +175,7 @@ public abstract class Guest : MonoBehaviour {
 		if (!state.Contains (GuestStates.Hungry) && !state.Contains(GuestStates.Sick)
 			&& !state.Contains(GuestStates.Fighting))
 		{
-			Debug.Log ("Adding Hungry State");
+//			Debug.Log ("Adding Hungry State");
 			state.Enqueue (GuestStates.Hungry);
 		}
 		StartCoroutine (HungerTimer ());
@@ -163,13 +183,15 @@ public abstract class Guest : MonoBehaviour {
 
 	protected void ResetAlcolismLevel(float newLevel)
 	{
-		Debug.Log ("Alcolism Level Reset to" + newLevel);
+//		Debug.Log ("Alcolism Level Reset to" + newLevel);
 		alcoolismLevel = newLevel;
 	}
 
 	protected void Puke ()
 	{
 		eventmanager.MakePuke (transform);
+		sickBubble.enabled = false;
+		StartCoroutine (ToggleBubble (cleanBubble));
 	}
 
 	protected void ChangeLayer (int id) {
@@ -184,6 +206,12 @@ public abstract class Guest : MonoBehaviour {
 		yield return new WaitForSeconds (1);
 		eventmanager.IncreaseMayhem (noDrinksMayhemLevel);
 		StartCoroutine (NoDrinks());
+	}
+
+	IEnumerator ToggleBubble (SpriteRenderer bubble) {
+		bubble.enabled = true;
+		yield return new WaitForSeconds (1f);
+		bubble.enabled = false;
 	}
 
 }

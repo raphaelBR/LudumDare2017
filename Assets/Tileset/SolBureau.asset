@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Name: SolBureau
   m_EditorClassIdentifier: 
   m_Sprite: {fileID: 21300000, guid: 84b59fac9310cbe418d8494d2694e0c0, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 0.78431374}
   m_Transform:
     e00: 1
     e01: 0

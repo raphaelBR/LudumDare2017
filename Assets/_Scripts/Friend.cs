@@ -30,7 +30,7 @@ public class Friend : Guest {
 		if (alcoolismLevel >= alcoolismLimit && !state.Contains (GuestStates.Sick)) {
 			state.Clear ();
 			state.Enqueue (GuestStates.Sick);
-			Debug.Log ("I m going to puke in " + pukeDelay);
+			sickBubble.enabled = true;
 			ChangeLayer (1);
 			Invoke ("Puke", pukeDelay);
 
@@ -63,7 +63,6 @@ public class Friend : Guest {
 
 	void Puke()
 	{
-		Debug.Log (" Friend Puking");
 		state.Clear ();
 		ResetAlcolismLevel (AlcolismResetLevel);
 		ChangeLayer (0);

@@ -26,6 +26,8 @@ public class Student : Guest {
 
 	private bool fought = false;
 
+	
+
 	protected override void Start ()
 	{
 		alcoolismLimit = 50f;	//First alcolism level trigger for student
@@ -45,7 +47,8 @@ public class Student : Guest {
 		{
 			state.Clear();
 			state.Enqueue (GuestStates.Fighting);
-			Debug.Log ("Student Will start Fighting in " + fightDelay);
+//			Debug.Log ("Student Will start Fighting in " + fightDelay);
+			madBubble.enabled = true;
 			ChangeLayer (2);
 			Invoke ("Fight", fightDelay);
 		}
@@ -54,7 +57,8 @@ public class Student : Guest {
 		{
 			state.Clear ();
 			state.Enqueue (GuestStates.Sick);
-			Debug.Log ("Student is going to puke in " + pukeDelay);
+			sickBubble.enabled = true;
+//			Debug.Log ("Student is going to puke in " + pukeDelay);
 			ChangeLayer (1);
 			Invoke ("Puke", pukeDelay);
 		}
@@ -87,13 +91,15 @@ public class Student : Guest {
 	void Fight()
 	{
 		//Increase level of mayhem
-		Debug.Log ("Student Is Fighting for " + fightDuration + " Seconds");
+		madBubble.enabled = false;
+		fightParticles.gameObject.SetActive (true);
+//		Debug.Log ("Student Is Fighting for " + fightDuration + " Seconds");
 		Invoke ("FinishFight", fightDuration);
 	}
 
 	void Puke()
 	{
-		Debug.Log ("Student Puking");
+//		Debug.Log ("Student Puking");
 		state.Clear ();
 		ResetAlcolismLevel (AlcolismResetLevel);
 		fought = false;
@@ -103,6 +109,7 @@ public class Student : Guest {
 
 	void FinishFight()
 	{
+		fightParticles.gameObject.SetActive (false);
 		fought = true;
 		state.Clear ();
 		ChangeLayer (0);

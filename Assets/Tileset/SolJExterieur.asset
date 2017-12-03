@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Name: SolJExterieur
   m_EditorClassIdentifier: 
   m_Sprite: {fileID: 21300000, guid: 4dde6e0d0811e3b488c25e878a37b5ce, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 0.78431374}
   m_Transform:
     e00: 1
     e01: 0

@@ -37,7 +37,7 @@ public class Party: Guest {
 		{
 			alcoolismRate *= 2;
 			turboMode = true;
-			Debug.Log ("Party Guy is drinking turbo mode");
+//			Debug.Log ("Party Guy is drinking turbo mode");
 			ChangeLayer (1);
 		}
 
@@ -45,7 +45,8 @@ public class Party: Guest {
 		{
 			state.Clear ();
 			state.Enqueue(GuestStates.High);
-			Debug.Log ("Party Guy is Rolling");
+			weedBubble.enabled = true;
+//			Debug.Log ("Party Guy is Rolling");
 			Invoke("GetHigh", rollingTime);
 		}
 
@@ -77,13 +78,16 @@ public class Party: Guest {
 	void GetHigh()
 	{
 		//Make Smoke
+		weedBubble.enabled = false;
+		weedParticles.gameObject.SetActive (true);
 		Debug.Log("Party Guy is getting High");
 		Invoke("FinishSmoking", smokingTime);
 	}
 
 	void FinishSmoking()
 	{
-		Debug.Log ("Party Guy finished the joint");
+//		Debug.Log ("Party Guy finished the joint");
+		weedParticles.gameObject.SetActive (false);
 		turboMode = false;
 		alcoolismRate /= 2;
 		state.Clear();

@@ -51,59 +51,38 @@ public class JukeBox : MonoBehaviour {
 
 	public void ChangeSong(int level) {
 		source.clip = levels [level - 1];
+
 		if (level <= 3) {
-
+			disco.color = Color.white;
 		} else {
-
+			if (disco.color == Color.white) {
+				StartCoroutine (Disco ());
+			}
 		}
 		if (level <= 6) {
-
+			isShaking = false;
 		} else {
-
+			isShaking = true;
 		}
 		switch (level) {
-		case 1:
-			RestoreLight ();
-			isShaking = false;
-			break;
-		case 2:
-			RestoreLight ();
-			isShaking = false;
-			break;
-		case 3:
-			RestoreLight ();
-			isShaking = false;
-			break;
 		case 4:
-			ChangeLight ();
-			isShaking = false;
 			discoRatio = disco1;
 			break;
 		case 5:
-			ChangeLight ();
-			isShaking = false;
 			discoRatio = disco2;
 			break;
 		case 6:
-			ChangeLight ();
-			isShaking = false;
 			discoRatio = disco3;
 			break;
 		case 7:
-			ChangeLight ();
-			isShaking = true;
 			discoRatio = disco4;
 			shakeAmount = shake1;
 			break;
 		case 8:
-			ChangeLight ();
-			isShaking = true;
 			discoRatio = disco5;
 			shakeAmount = shake2;
 			break;
 		case 9:
-			ChangeLight ();
-			isShaking = true;
 			discoRatio = disco6;
 			shakeAmount = shake3;
 			break;
@@ -111,16 +90,6 @@ public class JukeBox : MonoBehaviour {
 			break;
 		}
 		source.Play ();
-	}
-
-	void ChangeLight () {
-		if (disco.color == Color.white) {
-			StartCoroutine (Disco ());
-		}
-	}
-
-	void RestoreLight () {
-		disco.color = Color.white;
 	}
 
 	IEnumerator Disco () {
