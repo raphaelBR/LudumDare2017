@@ -60,6 +60,12 @@ public abstract class Guest : MonoBehaviour {
 	[SerializeField]
 	protected SpriteRenderer madBubble;
 
+	protected bool unsatisfied;
+
+	[SerializeField]
+	protected float mayhemIncreaseValue = 1;
+	private float timer;
+
 
 	void Awake () {
 		agent = GetComponent<NavMeshAgent> ();
@@ -70,6 +76,8 @@ public abstract class Guest : MonoBehaviour {
 		eventmanager = FindObjectOfType<EventManager> ().GetComponent<EventManager>();
 
 		state.Enqueue (GuestStates.Thirsty);
+
+		unsatisfied = true;
 	}
 
 	protected virtual void Start () {
@@ -78,6 +86,15 @@ public abstract class Guest : MonoBehaviour {
 	}
 
 	protected virtual void Update () {
+
+		timer += Time.deltaTime;
+
+		if ( unsatisfied && timer >= 1) {
+			Debug.Log ("Increased mayhem level");
+			eventmanager.IncreaseMayhem (mayhemIncreaseValue);
+			timer = 0;
+		}
+
 		if (agent.velocity == Vector3.zero) {
 			anim.SetBool ("Moving", false);
 		} else {
@@ -120,6 +137,7 @@ public abstract class Guest : MonoBehaviour {
 		}
 		else {
 //			Debug.Log ("There is no Drinks");
+			unsatisfied = true;
 			StartCoroutine (ToggleBubble (drinkBubble));
 		}
 	}
@@ -139,6 +157,7 @@ public abstract class Guest : MonoBehaviour {
 		}
 		else {
 			StartCoroutine (ToggleBubble (foodBubble));
+			unsatisfied = true;
 //			Debug.Log ("There is no food");
 		}
 	}
@@ -154,6 +173,8 @@ public abstract class Guest : MonoBehaviour {
 	}
 
 	void Satisfy () {
+		
+		unsatisfied = false;
 		state.Dequeue ();
 	}
 
