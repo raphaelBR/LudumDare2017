@@ -14,6 +14,9 @@ public class EventManager : MonoBehaviour {
 	[SerializeField]
 	private float animationSpeed = 0.2f;
 
+	[SerializeField]
+	private float pukeRatio = 0.05f;
+
 	public OptimisationPool juiceSource;
 	public OptimisationPool beerSource;
 	public OptimisationPool vodkaSource;
@@ -24,6 +27,8 @@ public class EventManager : MonoBehaviour {
 	public OptimisationPool pukeSource;
 	private PlayerBehavior player;
 	private Menu menu;
+
+	private float timer = 0f;
 
 	private float currentMayhemLevel = 0.0f;
 
@@ -37,15 +42,23 @@ public class EventManager : MonoBehaviour {
 	void Start ()
 	{
 		MayhemBar.fillAmount = 0.0f;	
+		timer = 0f;
 	}
 
 	void Update ()
 	{
+		timer += Time.deltaTime;
+		if (pukeSource.actives.Count > 0 && timer >= 1f)
+		{
+			IncreaseMayhem ((float)pukeSource.actives.Count * pukeRatio);
+			Debug.Log ("Puke party");
+			timer = 0f;
+		}
 		if (currentMayhemLevel > 100.0f)
 		{
 			currentMayhemLevel = 100.0f;
 		}
-		MayhemBar.fillAmount  = Mathf.Lerp(MayhemBar.fillAmount, (currentMayhemLevel / maxLevelMayhem), Time.deltaTime * animationSpeed);
+		MayhemBar.fillAmount  = currentMayhemLevel / maxLevelMayhem;
 	}
 
 	public void IncreaseMayhem (float value)

@@ -64,7 +64,7 @@ public abstract class Guest : MonoBehaviour {
 	protected bool unsatisfied;
 
 	[SerializeField]
-	protected float mayhemIncreaseValue = 1;
+	protected float mayhemIncreaseValue = 0.2f;
 	private float timer;
 
 
@@ -91,7 +91,7 @@ public abstract class Guest : MonoBehaviour {
 		timer += Time.deltaTime;
 
 		if ( unsatisfied && timer >= 1) {
-			Debug.Log ("Increased mayhem level");
+//			Debug.Log ("Increased mayhem level");
 			eventmanager.IncreaseMayhem (mayhemIncreaseValue);
 			timer = 0;
 		}
@@ -117,6 +117,7 @@ public abstract class Guest : MonoBehaviour {
 				Move (EnemyManager.Rooms.Bedroom);
 				break;
 			default:
+				Move ();
 				break;
 			}
 		}
@@ -138,18 +139,18 @@ public abstract class Guest : MonoBehaviour {
 	{
 		if (eventmanager.beerSource.actives.Count > 0) {
 			alcoolismLevel += alcoolismRate;
-//			Debug.Log ("I drink beer / Alcolism level at " + alcoolismLevel);
+			//			Debug.Log ("I drink beer / Alcolism level at " + alcoolismLevel);
+			Satisfy ();
 			Invoke("DespawnBeer", 2);
-			Satisfy ();
 		}else if(eventmanager.juiceSource.actives.Count > 0){
-//			Debug.Log ("I drink Juice / Alcolism level at " + alcoolismLevel);
-			Invoke("DespawnJuicer", 2);
+			//			Debug.Log ("I drink Juice / Alcolism level at " + alcoolismLevel);
 			Satisfy ();
+			Invoke("DespawnJuicer", 2);
 		}else if(eventmanager.vodkaSource.actives.Count > 0){
 			alcoolismLevel += alcoolismRate;
+			Satisfy ();
 			Invoke("DespawnVodka", 2);
 //			Debug.Log ("I drink Vodka / Alcolism level at " + alcoolismLevel);
-			Satisfy ();
 		}
 		else {
 //			Debug.Log ("There is no Drinks");
@@ -171,15 +172,15 @@ public abstract class Guest : MonoBehaviour {
 	protected virtual void EatFood()
 	{
 		if (eventmanager.pizzaSource.actives.Count > 0) {
-//			Debug.Log ("Eating Pizza");
-			Invoke(" DespawnPizza", 2);
+			//			Debug.Log ("Eating Pizza");
 			Satisfy ();
+			Invoke(" DespawnPizza", 2);
 		}
 		else if(eventmanager.chipsSource.actives.Count > 0)
 		{
-//			Debug.Log ("Eating Chips");
-			Invoke("DespawnChips", 2);
+			//			Debug.Log ("Eating Chips");
 			Satisfy ();
+			Invoke("DespawnChips", 2);
 		}
 		else {
 			StartCoroutine (ToggleBubble (foodBubble));

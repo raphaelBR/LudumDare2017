@@ -66,7 +66,7 @@ public class Party: Guest {
 		//Make Smoke
 		weedBubble.enabled = false;
 		weedParticles.gameObject.SetActive (true);
-		Debug.Log("Party Guy is getting High");
+//		Debug.Log("Party Guy is getting High");
 		Invoke("FinishSmoking", smokingTime);
 	}
 
