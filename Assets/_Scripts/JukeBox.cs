@@ -6,8 +6,11 @@ using UnityEngine.Audio;
 public class JukeBox : MonoBehaviour {
 
 	public float disco1 = 1f;
-	public float disco2 = 0.5f;
-	public float disco3 = 0.25f;
+	public float disco2 = 0.7f;
+	public float disco3 = 0.5f;
+	public float disco4 = 0.35f;
+	public float disco5 = 0.2f;
+	public float disco6 = 0.1f;
 	[Space(10f)]
 	public float shake1 = 0.1f;
 	public float shake2 = 0.2f;
@@ -59,43 +62,55 @@ public class JukeBox : MonoBehaviour {
 		case 1:
 			source.clip = level1 [Random.Range (0, level1.Count - 1)];
 			RestoreLight ();
+			isShaking = false;
 			break;
 		case 2:
 			source.clip = level2 [Random.Range (0, level2.Count - 1)];
 			RestoreLight ();
+			isShaking = false;
 			break;
 		case 3:
 			source.clip = level3 [Random.Range (0, level3.Count - 1)];
 			RestoreLight ();
+			isShaking = false;
 			break;
 		case 4:
 			source.clip = level4 [Random.Range (0, level4.Count - 1)];
-			RestoreLight ();
+			ChangeLight ();
+			isShaking = false;
+			discoRatio = disco1;
 			break;
 		case 5:
 			source.clip = level5 [Random.Range (0, level5.Count - 1)];
-			RestoreLight ();
+			ChangeLight ();
+			isShaking = false;
+			discoRatio = disco2;
 			break;
 		case 6:
 			source.clip = level6 [Random.Range (0, level6.Count - 1)];
-			RestoreLight ();
+			ChangeLight ();
+			isShaking = false;
+			discoRatio = disco3;
 			break;
 		case 7:
 			source.clip = level7 [Random.Range (0, level7.Count - 1)];
 			ChangeLight ();
-			discoRatio = disco1;
+			isShaking = true;
+			discoRatio = disco4;
 			shakeAmount = shake1;
 			break;
 		case 8:
 			source.clip = level8 [Random.Range (0, level8.Count - 1)];
 			ChangeLight ();
-			discoRatio = disco2;
+			isShaking = true;
+			discoRatio = disco5;
 			shakeAmount = shake2;
 			break;
 		case 9:
 			source.clip = level9 [Random.Range (0, level9.Count - 1)];
 			ChangeLight ();
-			discoRatio = disco3;
+			isShaking = true;
+			discoRatio = disco6;
 			shakeAmount = shake3;
 			break;
 		default:
@@ -108,12 +123,10 @@ public class JukeBox : MonoBehaviour {
 		if (disco.color == Color.white) {
 			StartCoroutine (Disco ());
 		}
-		isShaking = true;
 	}
 
 	void RestoreLight () {
 		disco.color = Color.white;
-		isShaking = false;
 	}
 
 	IEnumerator Disco () {
@@ -128,7 +141,7 @@ public class JukeBox : MonoBehaviour {
 	}
 
 	IEnumerator SoundUp () {
-		yield return new WaitForSeconds (10f);
+		yield return new WaitForSeconds (5f);
 		if (i < 9) {
 			i = i + 1;
 		} else {

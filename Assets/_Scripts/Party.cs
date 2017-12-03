@@ -1,9 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.AI;
 
-[RequireComponent(typeof(NavMeshAgent))]
 public class Party: Guest {
 
 	[SerializeField]
@@ -17,13 +15,11 @@ public class Party: Guest {
 	[SerializeField]
 	private float rollingTime = 2.0f;
 
-	private NavMeshAgent agent;
 
 	private bool turboMode = false;
 
 	protected override void Start ()
 	{
-		agent = GetComponent<NavMeshAgent> ();
 		Move ();
 		base.Start ();
 	}

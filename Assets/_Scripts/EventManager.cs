@@ -14,16 +14,21 @@ public class EventManager : MonoBehaviour {
 	[SerializeField]
 	private float animationSpeed = 0.2f;
 
+	public OptimisationPool juiceSource;
+	public OptimisationPool beerSource;
+	public OptimisationPool vodkaSource;
+	public OptimisationPool chipsSource;
+	public OptimisationPool pizzaSource;
+	public Transform table;
+
 	public OptimisationPool pukeSource;
 	private PlayerBehavior player;
 	private Menu menu;
 
 	private float currentMayhemLevel = 0.0f;
 
-	public OptimisationPool vodkaSource;
-	public Transform table;
 
-	void Awake()
+	void OnEnable()
 	{
 		player = FindObjectOfType<PlayerBehavior> ().GetComponent<PlayerBehavior> ();
 		menu = FindObjectOfType<Menu> ().GetComponent<Menu> ();

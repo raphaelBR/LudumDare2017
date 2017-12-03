@@ -1,12 +1,8 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.AI;
 
-[RequireComponent(typeof(NavMeshAgent))]
 public class Friend : Guest {
-
-	private NavMeshAgent agent;
 
 	//Delay after which Friend pukes
 	[SerializeField]
@@ -14,7 +10,6 @@ public class Friend : Guest {
 
 	protected override void Start ()
 	{
-		agent = GetComponent<NavMeshAgent> ();
 		Move ();
 		base.Start ();
 	}
@@ -27,6 +22,7 @@ public class Friend : Guest {
 			state.Clear();
 			state.Enqueue (GuestStates.Sick);
 			Debug.Log ("I m going to puke in " + pukeDelay);
+			ChangeLayer (1);
 			Invoke ("Puke", pukeDelay);
 
 		}

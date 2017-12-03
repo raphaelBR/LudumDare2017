@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.AI;
 
 public abstract class Guest : MonoBehaviour {
 
@@ -9,6 +10,8 @@ public abstract class Guest : MonoBehaviour {
 	public Queue<GuestStates> state = new Queue<GuestStates> ();
 
 	protected EventManager eventmanager;
+
+	protected Animator anim;
 
 	[SerializeField]
 	protected float waitingDelayMin = 10f;
@@ -30,8 +33,14 @@ public abstract class Guest : MonoBehaviour {
 	[SerializeField]
 	protected float musicDelay = 2f;
 
+	protected NavMeshAgent agent;
+
 
 	void Awake () {
+		agent = GetComponent<NavMeshAgent> ();
+		anim = GetComponentInChildren<Animator> ();
+		anim.SetBool ("Moving", false);
+		ChangeLayer (0);
 		manager = FindObjectOfType<EnemyManager> ().GetComponent<EnemyManager> ();
 		eventmanager = FindObjectOfType<EventManager> ().GetComponent<EventManager>();
 
@@ -44,6 +53,12 @@ public abstract class Guest : MonoBehaviour {
 	}
 
 	protected virtual void Update () {
+		if (agent.isStopped == true) {
+			anim.SetBool ("Moving", false);
+		} else {
+			anim.SetBool ("Moving", true);
+		}
+
 		if (state.Count != 0) {
 			switch (state.Peek())
 			{
@@ -114,6 +129,13 @@ public abstract class Guest : MonoBehaviour {
 	protected void Puke ()
 	{
 		eventmanager.MakePuke (transform);
+	}
+
+	protected void ChangeLayer (int id) {
+		for (int i = 0; i < anim.layerCount; i++) {
+			anim.SetLayerWeight (i, 0);
+		}
+		anim.SetLayerWeight (id, 1);
 	}
 
 }

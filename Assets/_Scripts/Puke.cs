@@ -7,7 +7,7 @@ public class Puke : MonoBehaviour {
 
 	private EventManager eventManagement;
 
-	void Start () {
+	void OnEnable () {
 		eventManagement = FindObjectOfType<EventManager> ().GetComponent<EventManager> ();
 	}
 

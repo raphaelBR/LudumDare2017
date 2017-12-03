@@ -21,6 +21,7 @@ GameObject:
   - component: {fileID: 4118650279789598}
   - component: {fileID: 212597768807941808}
   - component: {fileID: 114481432930030300}
+  - component: {fileID: 95970831150475184}
   m_Layer: 0
   m_Name: Friend
   m_TagString: Untagged
@@ -82,6 +83,23 @@ MeshFilter:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1811634696585840}
   m_Mesh: {fileID: 10207, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!95 &95970831150475184
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1810657144743350}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 0}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
 --- !u!114 &114314375778255522
 MonoBehaviour:
   m_ObjectHideFlags: 1

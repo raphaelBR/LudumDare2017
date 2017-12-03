@@ -1,9 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.AI;
 
-[RequireComponent(typeof(NavMeshAgent))]
 public class Student : Guest {
 
 	//Second Alcolism limit of student
@@ -23,13 +21,13 @@ public class Student : Guest {
 	private float fightDuration = 5.0f;
 
 	private bool fought = false;
-	private NavMeshAgent agent;
 
 	protected override void Start ()
 	{
-		agent = GetComponent<NavMeshAgent> ();
 		Move ();
 		base.Start ();
+//		eventmanager.beerSource.actives.Count;
+//		eventmanager.beerSource.actives [0].GetComponent<OptimisationItem> ().Despawn ();
 	}
 
 	protected override void Update ()
