@@ -5,6 +5,18 @@ using UnityEngine.UI;
 
 public class ItemPlacement : MonoBehaviour {
 
+	[SerializeField]
+	int beerSpawnNumber = 40;
+
+	[SerializeField]
+	int chipsSpawnNumber = 10;
+
+	[SerializeField]
+	int juiceSpawnNumber = 10;
+
+	[SerializeField]
+	int pizzaSpawnNumber = 40;
+
 	public PlayerBehavior.Item item;
 	public bool taking = true;
 
@@ -26,16 +38,16 @@ public class ItemPlacement : MonoBehaviour {
 					int k = 0;
 					switch (item) {
 					case PlayerBehavior.Item.Beer:
-						k = 6;
+						k = beerSpawnNumber;
 						break;
 					case PlayerBehavior.Item.Chips:
-						k = 3;
+						k = chipsSpawnNumber;
 						break;
 					case PlayerBehavior.Item.Juice:
-						k = 6;
+						k = juiceSpawnNumber;
 						break;
 					case PlayerBehavior.Item.Pizza:
-						k = 2;
+						k = pizzaSpawnNumber;
 						break;
 					}
 
