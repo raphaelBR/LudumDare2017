@@ -114,10 +114,9 @@ MonoBehaviour:
   alcoolismLevel: 0
   alcoolismLimit: 0
   alcoolismRate: 10
-  thirstDelay: 2
-  hungerDelay: 2
+  thirstDelay: 1.5
+  hungerDelay: 4
   musicDelay: 2
-  state: 0
 --- !u!135 &135500250469701454
 SphereCollider:
   m_ObjectHideFlags: 1

@@ -52,6 +52,7 @@
   </ItemGroup>
   <ItemGroup>
      <Compile Include="Assets\_Scripts\AutoDestruction.cs" />
+     <Compile Include="Assets\_Scripts\Bubble.cs" />
      <Compile Include="Assets\_Scripts\ColliderExtension.cs" />
      <Compile Include="Assets\_Scripts\Detection.cs" />
      <Compile Include="Assets\_Scripts\EndOfScene.cs" />
@@ -59,6 +60,8 @@
      <Compile Include="Assets\_Scripts\EventManager.cs" />
      <Compile Include="Assets\_Scripts\Friend.cs" />
      <Compile Include="Assets\_Scripts\Guest.cs" />
+     <Compile Include="Assets\_Scripts\ItemPlacement.cs" />
+     <Compile Include="Assets\_Scripts\Menu.cs" />
      <Compile Include="Assets\_Scripts\OptimisationItem.cs" />
      <Compile Include="Assets\_Scripts\OptimisationPool.cs" />
      <Compile Include="Assets\_Scripts\Party.cs" />
