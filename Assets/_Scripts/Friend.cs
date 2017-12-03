@@ -4,12 +4,20 @@ using UnityEngine;
 
 public class Friend : Guest {
 
+	//After Puke resets alcolism level to this value 
+	[SerializeField]
+	private float AlcolismResetLevel = 10f;
+
 	//Delay after which Friend pukes
 	[SerializeField]
 	private float pukeDelay = 10.0f;
 
 	protected override void Start ()
 	{
+		alcoolismLimit = 50f;	//First alcolism level trigger for student
+		alcoolismRate = 5f;		//How much student drinks each time
+		thirstDelay = 5f; 		//How long Before Student wants to drink
+		hungerDelay = 4f;		//How long Before Student wants to eat
 		alcoolismLimit = 30f;
 		alcoolismLevel = 0f;
 		Move ();
@@ -57,7 +65,7 @@ public class Friend : Guest {
 	{
 		Debug.Log (" Friend Puking");
 		state.Clear ();
-		ResetAlcolismLevel (10);
+		ResetAlcolismLevel (AlcolismResetLevel);
 		ChangeLayer (0);
 		base.Puke ();
 	}

@@ -175,11 +175,13 @@ MonoBehaviour:
   waitingDelayMin: 10
   waitingDelayMax: 15
   alcoolismLevel: 0
-  alcoolismLimit: 0
-  alcoolismRate: 3
+  alcoolismLimit: 30
+  alcoolismRate: 5
+  noDrinksMayhemLevel: 0.1
   thirstDelay: 3
   hungerDelay: 5
   musicDelay: 2
+  AlcolismResetLevel: 10
   pukeDelay: 10
 --- !u!135 &135500250469701454
 SphereCollider:

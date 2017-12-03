@@ -6,7 +6,11 @@ public class Student : Guest {
 
 	//Second Alcolism limit of student
 	[SerializeField]
-	private float studentAlcolismLevel2 = 100;
+	private float studentAlcolismLevel2 = 50;
+
+	//After Puke resets alcolism level to this value 
+	[SerializeField]
+	private float AlcolismResetLevel = 20f;
 
 	//Delay Before student starts puking
 	[SerializeField]
@@ -24,10 +28,15 @@ public class Student : Guest {
 
 	protected override void Start ()
 	{
+		alcoolismLimit = 50f;	//First alcolism level trigger for student
+		alcoolismRate = 10f;	//How much student drinks each time
+		thirstDelay = 5f; 		//How long Before Student wants to drink
+		hungerDelay = 4f;		//How long Before Student wants to eat
+
 		Move ();
 		base.Start ();
-//		eventmanager.beerSource.actives.Count;
-//		eventmanager.beerSource.actives [0].GetComponent<OptimisationItem> ().Despawn ();
+		//eventmanager.beerSource.actives.Count;
+		//eventmanager.beerSource.actives [0].GetComponent<OptimisationItem> ().Despawn ();
 	}
 
 	protected override void Update ()
@@ -86,7 +95,7 @@ public class Student : Guest {
 	{
 		Debug.Log ("Student Puking");
 		state.Clear ();
-		ResetAlcolismLevel (20);
+		ResetAlcolismLevel (AlcolismResetLevel);
 		fought = false;
 		ChangeLayer (0);
 		base.Puke ();

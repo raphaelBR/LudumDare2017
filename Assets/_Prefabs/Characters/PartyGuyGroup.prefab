@@ -115,11 +115,13 @@ MonoBehaviour:
   waitingDelayMin: 10
   waitingDelayMax: 15
   alcoolismLevel: 0
-  alcoolismLimit: 0
+  alcoolismLimit: 50
   alcoolismRate: 10
+  noDrinksMayhemLevel: 0.1
   thirstDelay: 1.5
   hungerDelay: 4
   musicDelay: 2
+  AlcolismResetLevel: 10
   partyGuyHighLevel: 100
   smokingTime: 4
   rollingTime: 2

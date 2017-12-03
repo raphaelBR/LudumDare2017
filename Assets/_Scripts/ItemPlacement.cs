@@ -23,8 +23,26 @@ public class ItemPlacement : MonoBehaviour {
 				player.TakeItem (item);
 			} else {
 				if (player.DropItem (item) == true) {
-					GameObject food = GetComponent<OptimisationPool> ().Spawn ();
-					food.transform.position = new Vector3 (Random.Range (transform.position.x + transform.lossyScale.x / 2, transform.position.x - transform.lossyScale.x / 2), transform.position.y, Random.Range (transform.position.z + transform.lossyScale.z / 2, transform.position.z - transform.lossyScale.z / 2));
+					int k = 0;
+					switch (item) {
+					case PlayerBehavior.Item.Beer:
+						k = 6;
+						break;
+					case PlayerBehavior.Item.Chips:
+						k = 3;
+						break;
+					case PlayerBehavior.Item.Juice:
+						k = 6;
+						break;
+					case PlayerBehavior.Item.Pizza:
+						k = 2;
+						break;
+					}
+
+					for (int i = 0; i < k; i++) {
+						GameObject food = GetComponent<OptimisationPool> ().Spawn ();
+						food.transform.position = new Vector3 (Random.Range (transform.position.x + transform.lossyScale.x / 2, transform.position.x - transform.lossyScale.x / 2), transform.position.y, Random.Range (transform.position.z + transform.lossyScale.z / 2, transform.position.z - transform.lossyScale.z / 2));	
+					}
 				}
 			}
 		} else {

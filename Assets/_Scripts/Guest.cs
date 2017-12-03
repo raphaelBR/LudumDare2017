@@ -15,6 +15,7 @@ public abstract class Guest : MonoBehaviour {
 
 	[SerializeField]
 	protected float waitingDelayMin = 10f;
+
 	[SerializeField]
 	protected float waitingDelayMax = 15f;
 
@@ -23,13 +24,19 @@ public abstract class Guest : MonoBehaviour {
 	[SerializeField]
 	protected float alcoolismLevel = 0f;
 	[SerializeField]
-	protected float alcoolismLimit = 0f;
+	protected float alcoolismLimit = 100f;
 	[SerializeField]
 	protected float alcoolismRate = 5f;
+
+	[SerializeField]
+	protected float noDrinksMayhemLevel = 0.1f;
+
 	[SerializeField]
 	protected float thirstDelay = 2f;
+
 	[SerializeField]
 	protected float hungerDelay = 2f;
+
 	[SerializeField]
 	protected float musicDelay = 2f;
 
@@ -76,20 +83,54 @@ public abstract class Guest : MonoBehaviour {
 
 	protected virtual void DrinkAlcohol ()
 	{
-		alcoolismLevel += alcoolismRate;
-		Debug.Log ("I drink / Alcolism level at " + alcoolismLevel);
+		if (eventmanager.beerSource.actives.Count > 0) {
+			alcoolismLevel += alcoolismRate;
+			Debug.Log ("I drink beer / Alcolism level at " + alcoolismLevel);
+			eventmanager.beerSource.actives[0].GetComponent<OptimisationItem> ().Despawn ();
+			Satisfy ();
+		}else if(eventmanager.juiceSource.actives.Count > 0){
+			Debug.Log ("I drink Juice / Alcolism level at " + alcoolismLevel);
+			eventmanager.juiceSource.actives[0].GetComponent<OptimisationItem> ().Despawn ();
+			Satisfy ();
+		}
+
+		if(eventmanager.vodkaSource.actives.Count > 0){
+			alcoolismLevel += alcoolismRate;
+			Debug.Log ("I drink Vodka / Alcolism level at " + alcoolismLevel);
+			eventmanager.vodkaSource.actives[0].GetComponent<OptimisationItem> ().Despawn ();
+			Satisfy ();
+		}
+		else {
+			Debug.Log ("There is no Drinks");
+		}
+	}
+
+	protected virtual void EatFood()
+	{
+		if (eventmanager.pizzaSource.actives.Count > 0) {
+			Debug.Log ("Eating Pizza");
+			eventmanager.pizzaSource.actives[0].GetComponent<OptimisationItem>().Despawn ();
+			Satisfy ();
+		}
+		else if(eventmanager.chipsSource.actives.Count > 0)
+		{
+			Debug.Log ("Eating Chips");
+			eventmanager.chipsSource.actives[0].GetComponent<OptimisationItem>().Despawn ();
+			Satisfy ();
+		}
+		else {
+			Debug.Log ("There is no food");
+		}
 	}
 
 	protected virtual void Hungry ()
 	{
-		Debug.Log ("I eat");
-		Satisfy ();
+		EatFood ();
 	}
 
 	protected virtual void Thirsty ()
 	{
 		DrinkAlcohol();
-		Satisfy ();
 	}
 
 	void Satisfy () {
@@ -136,6 +177,13 @@ public abstract class Guest : MonoBehaviour {
 			anim.SetLayerWeight (i, 0);
 		}
 		anim.SetLayerWeight (id, 1);
+	}
+
+	protected IEnumerator NoDrinks()
+	{
+		yield return new WaitForSeconds (1);
+		eventmanager.IncreaseMayhem (noDrinksMayhemLevel);
+		StartCoroutine (NoDrinks());
 	}
 
 }

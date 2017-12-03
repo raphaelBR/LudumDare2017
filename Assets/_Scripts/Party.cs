@@ -4,6 +4,10 @@ using UnityEngine;
 
 public class Party: Guest {
 
+	//After Smoking weed resets alcolism level to this value 
+	[SerializeField]
+	private float AlcolismResetLevel = 10f;
+
 	[SerializeField]
 	private float partyGuyHighLevel = 100;
 
@@ -26,6 +30,9 @@ public class Party: Guest {
 
 	protected override void Update ()
 	{
+		if (alcoolismLevel > 110)
+			alcoolismLevel = 100;
+
 		if (alcoolismLevel >= alcoolismLimit && !turboMode)
 		{
 			alcoolismRate *= 2;
@@ -78,8 +85,9 @@ public class Party: Guest {
 	{
 		Debug.Log ("Party Guy finished the joint");
 		turboMode = false;
+		alcoolismRate /= 2;
 		state.Clear();
-		ResetAlcolismLevel(40);
+		ResetAlcolismLevel(AlcolismResetLevel);
 		ChangeLayer (0);
 	}
 }

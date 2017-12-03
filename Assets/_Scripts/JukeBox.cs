@@ -142,7 +142,7 @@ public class JukeBox : MonoBehaviour {
 			i = 1;
 		}
 		ChangeSong (i);
-		Debug.Log (i);
+		//Debug.Log (i);
 		StartCoroutine (SoundUp ());
 	}
 }
