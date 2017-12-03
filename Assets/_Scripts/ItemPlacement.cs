@@ -23,7 +23,8 @@ public class ItemPlacement : MonoBehaviour {
 				player.TakeItem (item);
 			} else {
 				if (player.DropItem (item) == true) {
-					// Place on table
+					GameObject food = GetComponent<OptimisationPool> ().Spawn ();
+					food.transform.position = new Vector3 (Random.Range (transform.position.x + transform.lossyScale.x / 2, transform.position.x - transform.lossyScale.x / 2), transform.position.y, Random.Range (transform.position.z + transform.lossyScale.z / 2, transform.position.z - transform.lossyScale.z / 2));
 				}
 			}
 		} else {
