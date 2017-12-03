@@ -14,11 +14,14 @@ public class EventManager : MonoBehaviour {
 	[SerializeField]
 	private float animationSpeed = 0.2f;
 
+	public OptimisationPool pukeSource;
+	private PlayerBehavior player;
+
 	private float currentMayhemLevel = 0.0f;
 
 	void Awake()
 	{
-
+		player = FindObjectOfType<PlayerBehavior> ().GetComponent<PlayerBehavior> ();
 	}
 
 	// Use this for initialization
@@ -30,6 +33,7 @@ public class EventManager : MonoBehaviour {
 	// Update is called once per frame
 	void Update ()
 	{
+		Debug.Log (pukeSource.actives.Count);
 		if (currentMayhemLevel > 100.0f)
 			currentMayhemLevel = 100.0f;
 		
@@ -41,8 +45,17 @@ public class EventManager : MonoBehaviour {
 		currentMayhemLevel += value;
 	}
 
-	public void RepairPuke ()
+	public void MakePuke (Transform transf)
 	{
-		Debug.Log ("OK");
+		GameObject puke = pukeSource.Spawn ();
+		puke.transform.position = transf.position;
+	}
+
+	public bool ResolvePuke () {
+		if (player.item == PlayerBehavior.Item.Mop) {
+			return true;
+		} else {
+			return false;
+		}
 	}
 }

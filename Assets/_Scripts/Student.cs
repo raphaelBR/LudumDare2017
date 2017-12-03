@@ -88,6 +88,7 @@ public class Student : Guest {
 		state.Clear ();
 		ResetAlcolismLevel (20);
 		fought = false;
+		base.Puke ();
 	}
 
 	void FinishFight()

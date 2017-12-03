@@ -9,7 +9,6 @@ public class OptimisationPool : MonoBehaviour {
 
 	public List<GameObject> reserve;
 
-	[HideInInspector]
 	public List<GameObject> actives;
 
 	GameObject Create () {

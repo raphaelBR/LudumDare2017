@@ -40,9 +40,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4920720645814176}
   - component: {fileID: 212828303909209806}
-  - component: {fileID: 114660807984975186}
-  - component: {fileID: 114778434376022464}
-  - component: {fileID: 114410009223440130}
+  - component: {fileID: 114672258035331772}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -89,13 +87,13 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1256300417386350}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0.7071068, y: 0, z: 0, w: 0.7071068}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 4230287895050342}
   m_RootOrder: 1
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 90, y: 0, z: 0}
 --- !u!4 &4995255116209042
 Transform:
   m_ObjectHideFlags: 1
@@ -180,7 +178,7 @@ MonoBehaviour:
   rawPosition: {x: 0, y: 0, z: 0}
   rawRotation: {x: 0, y: 0, z: 0}
   rawScale: {x: 0, y: 0, z: 0}
---- !u!114 &114410009223440130
+--- !u!114 &114672258035331772
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
@@ -217,86 +215,12 @@ MonoBehaviour:
   rawPosition: {x: 0, y: 0, z: 0}
   rawRotation: {x: 0, y: 0, z: 0}
   rawScale: {x: 0, y: 0, z: 0}
---- !u!114 &114660807984975186
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1256300417386350}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2041d63e79432114eb1c6774760a68c2, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  mode: 1
-  positionAxis: 0
-  rotationAxis: 7
-  scaleAxis: 7
-  positionWorld: 0
-  rotationWorld: 0
-  mirror: 0
-  moveAxis: 7
-  moveSpeedX: 0
-  moveSpeedY: 0
-  moveSpeedZ: 0
-  spinAxis: 7
-  spinSpeedX: 0
-  spinSpeedY: 0
-  spinSpeedZ: 0
-  growAxis: 7
-  growSpeedX: 0
-  growSpeedY: 0
-  growSpeedZ: 0
-  target: {fileID: 4230287895050342}
-  moveToward: 0
-  speed: 0
-  lookAt: 0
-  rawPosition: {x: 0, y: 0, z: 0}
-  rawRotation: {x: 0, y: 0, z: 0}
-  rawScale: {x: 0, y: 0, z: 0}
 --- !u!114 &114723967455443792
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1696336128646676}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2041d63e79432114eb1c6774760a68c2, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  mode: 4
-  positionAxis: 7
-  rotationAxis: 7
-  scaleAxis: 7
-  positionWorld: 0
-  rotationWorld: 0
-  mirror: 0
-  moveAxis: 7
-  moveSpeedX: 0
-  moveSpeedY: 0
-  moveSpeedZ: 0
-  spinAxis: 7
-  spinSpeedX: 0
-  spinSpeedY: 0
-  spinSpeedZ: 0
-  growAxis: 7
-  growSpeedX: 0
-  growSpeedY: 0
-  growSpeedZ: 0
-  target: {fileID: 0}
-  moveToward: 0
-  speed: 0
-  lookAt: 1
-  rawPosition: {x: 0, y: 0, z: 0}
-  rawRotation: {x: 0, y: 0, z: 0}
-  rawScale: {x: 0, y: 0, z: 0}
---- !u!114 &114778434376022464
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1256300417386350}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 2041d63e79432114eb1c6774760a68c2, type: 3}

@@ -82,6 +82,6 @@ public class EnemyManager : MonoBehaviour {
 			roomTransform = gardenLimits;
 			break;
 		}
-		return new Vector3 (Random.Range (roomTransform.position.x + roomTransform.lossyScale.x/2, roomTransform.position.x - roomTransform.lossyScale.x/2), constantY, Random.Range (roomTransform.position.z + roomTransform.lossyScale.z/2, roomTransform.position.z - roomTransform.lossyScale.z/2));
+		return new Vector3 (Random.Range (roomTransform.position.x + roomTransform.lossyScale.x / 2, roomTransform.position.x - roomTransform.lossyScale.x / 2), 	constantY, Random.Range (roomTransform.position.z + roomTransform.lossyScale.z / 2, roomTransform.position.z - roomTransform.lossyScale.z / 2));
 	}
 }

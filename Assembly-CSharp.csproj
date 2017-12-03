@@ -67,6 +67,7 @@
      <Compile Include="Assets\_Scripts\Party.cs" />
      <Compile Include="Assets\_Scripts\PatrolRoute.cs" />
      <Compile Include="Assets\_Scripts\PlayerBehavior.cs" />
+     <Compile Include="Assets\_Scripts\Puke.cs" />
      <Compile Include="Assets\_Scripts\Student.cs" />
      <Compile Include="Assets\_Scripts\TransformExtension.cs" />
  <Reference Include="UnityEngine.UI">

@@ -62,5 +62,7 @@ public class Friend : Guest {
 		eventmanager.IncreaseMayhem (10);
 		state.Clear ();
 		ResetAlcolismLevel (10);
+		base.Puke ();
 	}
+
 }

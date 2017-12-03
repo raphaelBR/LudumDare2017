@@ -110,4 +110,10 @@ public abstract class Guest : MonoBehaviour {
 		Debug.Log ("Alcolism Level Reset to" + newLevel);
 		alcoolismLevel = newLevel;
 	}
+
+	protected void Puke ()
+	{
+		eventmanager.MakePuke (transform);
+	}
+
 }
