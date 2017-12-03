@@ -12,6 +12,8 @@ public class PizzaGuy : MonoBehaviour {
 
 	private Animator anim;
 
+	public float waitDelay = 15f;
+
 	void Start () {
 		agent = GetComponent<NavMeshAgent> ();
 		anim = GetComponentInChildren<Animator> ();
@@ -32,5 +34,6 @@ public class PizzaGuy : MonoBehaviour {
 
 	public void Deliver () {
 		agent.SetDestination (new Vector3 (door.position.x, transform.position.y, door.position.z));
+		Invoke ("GoHome", waitDelay);
 	}
 }

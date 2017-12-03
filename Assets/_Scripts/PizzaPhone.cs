@@ -13,6 +13,10 @@ public class PizzaPhone : MonoBehaviour {
 
 	public float cooldownDelay = 5f;
 
+	void Start () {
+		dude = FindObjectOfType<PizzaGuy> ().GetComponent<PizzaGuy> ();
+	}
+
 	public void Call () {
 		if (available == true) {
 			dude.Deliver ();
