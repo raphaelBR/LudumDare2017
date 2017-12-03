@@ -4,9 +4,9 @@ using UnityEngine;
 
 public abstract class Guest : MonoBehaviour {
 
-	public enum EnemyStates {Hungry, Thirsty}
+	public enum GuestStates {Hungry, Thirsty, Sick, Fighting, High}
 
-	public Queue<EnemyStates> state = new Queue<EnemyStates> ();
+	public Queue<GuestStates> state = new Queue<GuestStates> ();
 
 	[SerializeField]
 	protected float waitingDelayMin = 10f;
@@ -20,7 +20,7 @@ public abstract class Guest : MonoBehaviour {
 	[SerializeField]
 	protected float alcoolismLimit = 0f;
 	[SerializeField]
-	protected float alcoolismRate = 10f;
+	protected float alcoolismRate = 5f;
 	[SerializeField]
 	protected float thirstDelay = 2f;
 	[SerializeField]
@@ -29,22 +29,26 @@ public abstract class Guest : MonoBehaviour {
 	protected float musicDelay = 2f;
 
 
-	void Awake () {
+	void Awake ()
+	{
 		manager = FindObjectOfType<EnemyManager> ().GetComponent<EnemyManager> ();
 	}
 
-	protected virtual void Start () {
+	protected virtual void Start ()
+	{
 		StartCoroutine (ThirstTimer ());
 		StartCoroutine (HungerTimer ());
 	}
 
-	protected virtual void Update () {
+	protected virtual void Update ()
+	{
 		if (state.Count != 0) {
-			switch (state.Peek()) {
-			case EnemyStates.Hungry:
+			switch (state.Peek())
+			{
+			case GuestStates.Hungry:
 				Hungry ();
 				break;
-			case EnemyStates.Thirsty:
+			case GuestStates.Thirsty:
 				Thirsty ();
 				break;
 			default:
@@ -53,17 +57,21 @@ public abstract class Guest : MonoBehaviour {
 		}
 	}
 
-	protected virtual void DrinkAlcohol () {
+	protected virtual void DrinkAlcohol ()
+	{
 		alcoolismLevel += alcoolismRate;
+		Debug.Log ("I drink / Alcolism level at " + alcoolismLevel);
 	}
 
-	protected virtual void Hungry () {
+	protected virtual void Hungry ()
+	{
 		Debug.Log ("I eat");
 		Satisfy ();
 	}
 
-	protected virtual void Thirsty () {
-		Debug.Log ("I drink");
+	protected virtual void Thirsty ()
+	{
+		DrinkAlcohol();
 		Satisfy ();
 	}
 
@@ -71,21 +79,33 @@ public abstract class Guest : MonoBehaviour {
 		state.Dequeue ();
 	}
 
-	IEnumerator ThirstTimer () {
-//		Debug.Log ("Starting Thirsty");
+	IEnumerator ThirstTimer ()
+	{
 		yield return new WaitForSeconds (thirstDelay);
-		if (state.Contains (EnemyStates.Thirsty) == false) {
-			state.Enqueue (EnemyStates.Thirsty);
+		if (!state.Contains (GuestStates.Thirsty) && !state.Contains(GuestStates.Sick)
+			&& !state.Contains(GuestStates.Fighting))
+		{
+			//Debug.Log ("Adding Thirsty State");
+			state.Enqueue (GuestStates.Thirsty);
 		}
 		StartCoroutine (ThirstTimer ());
 	}
 
-	IEnumerator HungerTimer () {
-//		Debug.Log ("Starting Hungry");
+	IEnumerator HungerTimer ()
+	{
 		yield return new WaitForSeconds (hungerDelay);
-		if (state.Contains (EnemyStates.Hungry) == false) {
-			state.Enqueue (EnemyStates.Hungry);
+		if (!state.Contains (GuestStates.Hungry) && !state.Contains(GuestStates.Sick)
+			&& !state.Contains(GuestStates.Fighting))
+		{
+			//Debug.Log ("Adding Hungry State");
+			state.Enqueue (GuestStates.Hungry);
 		}
 		StartCoroutine (HungerTimer ());
+	}
+
+	protected void ResetAlcolismLevel(float newLevel)
+	{
+		Debug.Log ("Alcolism Level Reset to" + newLevel);
+		alcoolismLevel = newLevel;
 	}
 }
