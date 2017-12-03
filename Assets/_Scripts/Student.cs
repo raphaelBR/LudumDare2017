@@ -30,10 +30,6 @@ public class Student : Guest {
 
 	protected override void Start ()
 	{
-		alcoolismLimit = 50f;	//First alcolism level trigger for student
-		alcoolismRate = 10f;	//How much student drinks each time
-		thirstDelay = 5f; 		//How long Before Student wants to drink
-		hungerDelay = 4f;		//How long Before Student wants to eat
 
 		Move ();
 		base.Start ();

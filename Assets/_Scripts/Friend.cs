@@ -14,12 +14,6 @@ public class Friend : Guest {
 
 	protected override void Start ()
 	{
-		alcoolismLimit = 50f;	//First alcolism level trigger for student
-		alcoolismRate = 5f;		//How much student drinks each time
-		thirstDelay = 5f; 		//How long Before Student wants to drink
-		hungerDelay = 4f;		//How long Before Student wants to eat
-		alcoolismLimit = 30f;
-		alcoolismLevel = 0f;
 		base.Start ();
 	}
 
