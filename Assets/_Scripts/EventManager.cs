@@ -16,33 +16,39 @@ public class EventManager : MonoBehaviour {
 
 	public OptimisationPool pukeSource;
 	private PlayerBehavior player;
+	private Menu menu;
 
 	private float currentMayhemLevel = 0.0f;
+
+	public OptimisationPool vodkaSource;
+	public Transform table;
 
 	void Awake()
 	{
 		player = FindObjectOfType<PlayerBehavior> ().GetComponent<PlayerBehavior> ();
+		menu = FindObjectOfType<Menu> ().GetComponent<Menu> ();
 	}
 
-	// Use this for initialization
 	void Start ()
 	{
 		MayhemBar.fillAmount = 0.0f;	
 	}
-	
-	// Update is called once per frame
+
 	void Update ()
 	{
-		Debug.Log (pukeSource.actives.Count);
 		if (currentMayhemLevel > 100.0f)
+		{
 			currentMayhemLevel = 100.0f;
-		
+		}
 		MayhemBar.fillAmount  = Mathf.Lerp(MayhemBar.fillAmount, (currentMayhemLevel / maxLevelMayhem), Time.deltaTime * animationSpeed);
 	}
 
-	public void IncreaseMayhem(float value)
+	public void IncreaseMayhem (float value)
 	{
 		currentMayhemLevel += value;
+		if ((float)MayhemBar.fillAmount >= maxLevelMayhem) {
+			menu.GoToDeath ();
+		}
 	}
 
 	public void MakePuke (Transform transf)
@@ -57,5 +63,11 @@ public class EventManager : MonoBehaviour {
 		} else {
 			return false;
 		}
+	}
+
+	public void BringVodka ()
+	{
+		GameObject vodka = vodkaSource.Spawn ();
+		vodka.transform.position = new Vector3 (Random.Range (table.position.x + table.lossyScale.x / 2, table.position.x - table.lossyScale.x / 2), table.position.y, Random.Range (table.position.z + table.lossyScale.z / 2, table.position.z - table.lossyScale.z / 2));
 	}
 }

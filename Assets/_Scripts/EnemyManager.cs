@@ -10,6 +10,9 @@ public class EnemyManager : MonoBehaviour {
 	public OptimisationPool studentPool;
 	public OptimisationPool partyPool;
 	[Space(10f)]
+	public float spawnQuantity = 1f;
+	public float spawnDelay = 3f;
+	[Space(5f)]
 	public float quantityIncrement = 1f;
 	public float delayIncrement = 1f;
 	[Space(10f)]
@@ -19,10 +22,7 @@ public class EnemyManager : MonoBehaviour {
 	public Transform bedroomLimits;
 	public Transform toiletsLimits;
 
-	private float spawnQuantity = 1;
-	private float spawnDelay = 5f;
-
-	void Start () {
+	void Awake () {
 		StartCoroutine (Spawning ());
 	}
 

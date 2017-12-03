@@ -1,16 +1,21 @@
 ﻿<Properties StartupItem="Assembly-CSharp.csproj">
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="Unity.Instance.Unity Editor" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\_Scripts\EventManager.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\_Scripts\Initializer.cs">
     <Files>
-      <File FileName="Assets\_Scripts\ItemPlacement.cs" Line="47" Column="5" />
-      <File FileName="Assets\_Scripts\PlayerBehavior.cs" Line="42" Column="3" />
-      <File FileName="Assets\_Scripts\Bubble.cs" Line="10" Column="3" />
-      <File FileName="Assets\_Scripts\Menu.cs" Line="25" Column="38" />
-      <File FileName="Assets\_Scripts\Student.cs" Line="43" Column="4" />
-      <File FileName="Assets\_Scripts\Guest.cs" Line="35" Column="76" />
-      <File FileName="Assets\_Scripts\EnemyManager.cs" Line="85" Column="291" />
+      <File FileName="Assets\_Scripts\ItemPlacement.cs" Line="1" Column="1" />
+      <File FileName="Assets\_Scripts\PlayerBehavior.cs" Line="1" Column="1" />
+      <File FileName="Assets\_Scripts\Bubble.cs" Line="1" Column="1" />
+      <File FileName="Assets\_Scripts\Menu.cs" Line="17" Column="15" />
+      <File FileName="Assets\_Scripts\Student.cs" Line="1" Column="1" />
+      <File FileName="Assets\_Scripts\Friend.cs" Line="63" Column="27" />
+      <File FileName="Assets\_Scripts\Guest.cs" Line="18" Column="33" />
+      <File FileName="Assets\_Scripts\EnemyManager.cs" Line="13" Column="32" />
       <File FileName="Assets\_Scripts\OptimisationPool.cs" Line="1" Column="1" />
-      <File FileName="Assets\_Scripts\EventManager.cs" Line="36" Column="1" />
+      <File FileName="Assets\_Scripts\EventManager.cs" Line="49" Column="36" />
+      <File FileName="Assets\_Scripts\Puke.cs" Line="6" Column="1" />
+      <File FileName="Assets\_Scripts\OptimisationItem.cs" Line="1" Column="1" />
+      <File FileName="Assets\_Scripts\JukeBox.cs" Line="36" Column="20" />
+      <File FileName="Assets\_Scripts\Initializer.cs" Line="11" Column="36" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>

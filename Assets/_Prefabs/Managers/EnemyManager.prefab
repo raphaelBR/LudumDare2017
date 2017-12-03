@@ -36,7 +36,6 @@ GameObject:
   m_Component:
   - component: {fileID: 4503056365320382}
   - component: {fileID: 114123515891936032}
-  - component: {fileID: 114619342893895568}
   m_Layer: 0
   m_Name: EnemyManager
   m_TagString: Untagged
@@ -145,8 +144,8 @@ MonoBehaviour:
   friendPool: {fileID: 114297868637763952}
   studentPool: {fileID: 114908260548398818}
   partyPool: {fileID: 114565220529936758}
-  quantityIncrement: 1
-  delayIncrement: 500
+  quantityIncrement: 10
+  delayIncrement: 1
   gardenLimits: {fileID: 0}
   kitchenLimits: {fileID: 0}
   diningLimits: {fileID: 0}
@@ -180,17 +179,6 @@ MonoBehaviour:
   prefab: {fileID: 114314375778255522, guid: 236d6aed640b8574baa90da9cb61bdb3, type: 2}
   reserve: []
   actives: []
---- !u!114 &114619342893895568
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1065215615074104}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2842fd784be3617428b8921ea1acfbb9, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &114908260548398818
 MonoBehaviour:
   m_ObjectHideFlags: 1

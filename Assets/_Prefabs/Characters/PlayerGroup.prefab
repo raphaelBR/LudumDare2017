@@ -24,7 +24,7 @@ GameObject:
   - component: {fileID: 136907192190053682}
   - component: {fileID: 54396378390002992}
   - component: {fileID: 114341751963567722}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: PlayerGroup
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -41,7 +41,7 @@ GameObject:
   - component: {fileID: 4920720645814176}
   - component: {fileID: 212828303909209806}
   - component: {fileID: 114672258035331772}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Player
   m_TagString: Player
   m_Icon: {fileID: 0}
@@ -59,7 +59,7 @@ GameObject:
   - component: {fileID: 212224559900341146}
   - component: {fileID: 114723967455443792}
   - component: {fileID: 114794271052928862}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Item
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -135,11 +135,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   item: 0
   itemImage: {fileID: 212224559900341146}
-  mopSprite: {fileID: 21300000, guid: 08a055c8d70d54244a18364d5ba51039, type: 3}
+  mopSprite: {fileID: 21300000, guid: 58cdd6af7faafa246bc8b523eb2a9aac, type: 3}
   pizzaSprite: {fileID: 21300000, guid: aa1ee4f7beafe4f48a0f876bd5765e5d, type: 3}
   chipsSprite: {fileID: 21300000, guid: a5c353197174e7542bf68bf7e7d8b24a, type: 3}
-  juiceSprite: {fileID: 21300000, guid: 08a60a668e97aa24995e31890946a3db, type: 3}
-  beerSprite: {fileID: 21300000, guid: ef8ac176caf73944e8b288d9e042cb51, type: 3}
+  juiceSprite: {fileID: 21300000, guid: 4a00a25bc462fe14b992fe9f6668da83, type: 3}
+  beerSprite: {fileID: 21300000, guid: 9058cda25f3391e4e93d837d756f9c22, type: 3}
   pauseDuration: 0.2
 --- !u!114 &114341751963567722
 MonoBehaviour:
@@ -409,5 +409,5 @@ SpriteRenderer:
   m_Size: {x: 1, y: 2}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 1
+  m_WasSpriteAssigned: 0
   m_MaskInteraction: 0

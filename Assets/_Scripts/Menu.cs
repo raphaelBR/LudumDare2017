@@ -8,10 +8,14 @@ public class Menu : MonoBehaviour {
 
 	public Image mainMenu;
 	public Image gameOver;
-	public GameObject inGame;
 
 	public string gameScene;
 	public string menuScene;
+
+	void Awake () {
+		DontDestroyOnLoad (gameObject);
+		GoToMain ();
+	}
 
 	public void GoToGame () {
 		mainMenu.gameObject.SetActive (false);

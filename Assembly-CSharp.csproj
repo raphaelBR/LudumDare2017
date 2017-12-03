@@ -60,7 +60,9 @@
      <Compile Include="Assets\_Scripts\EventManager.cs" />
      <Compile Include="Assets\_Scripts\Friend.cs" />
      <Compile Include="Assets\_Scripts\Guest.cs" />
+     <Compile Include="Assets\_Scripts\Initializer.cs" />
      <Compile Include="Assets\_Scripts\ItemPlacement.cs" />
+     <Compile Include="Assets\_Scripts\JukeBox.cs" />
      <Compile Include="Assets\_Scripts\Menu.cs" />
      <Compile Include="Assets\_Scripts\OptimisationItem.cs" />
      <Compile Include="Assets\_Scripts\OptimisationPool.cs" />
@@ -68,6 +70,7 @@
      <Compile Include="Assets\_Scripts\PatrolRoute.cs" />
      <Compile Include="Assets\_Scripts\PlayerBehavior.cs" />
      <Compile Include="Assets\_Scripts\Puke.cs" />
+     <Compile Include="Assets\_Scripts\ScreenRecorder.cs" />
      <Compile Include="Assets\_Scripts\Student.cs" />
      <Compile Include="Assets\_Scripts\TransformExtension.cs" />
  <Reference Include="UnityEngine.UI">
