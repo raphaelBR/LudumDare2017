@@ -35,6 +35,7 @@ public class EnemyManager : MonoBehaviour {
 //		foreach (GameObject enemy in partyPool.actives) {
 //			Debug.Log ("Party " + enemy.name);
 //		}
+		Debug.Log(friendPool.actives.Count + partyPool.actives.Count + studentPool.actives.Count);
 	}
 
 	IEnumerator Spawning () {
