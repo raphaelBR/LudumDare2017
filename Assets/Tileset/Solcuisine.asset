@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Name: Solcuisine
   m_EditorClassIdentifier: 
   m_Sprite: {fileID: 21300000, guid: 5ed9d71ae5c91924199df506f82abd7c, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 0.78431374}
+  m_Color: {r: 0.522, g: 0.466, b: 0.553, a: 0.578}
   m_Transform:
     e00: 1
     e01: 0

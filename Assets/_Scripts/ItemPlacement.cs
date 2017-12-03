@@ -53,7 +53,7 @@ public class ItemPlacement : MonoBehaviour {
 
 					for (int i = 0; i < k; i++) {
 						GameObject food = GetComponent<OptimisationPool> ().Spawn ();
-						food.transform.position = new Vector3 (Random.Range (transform.position.x + transform.lossyScale.x / 2, transform.position.x - transform.lossyScale.x / 2), transform.position.y, Random.Range (transform.position.z + transform.lossyScale.z / 2, transform.position.z - transform.lossyScale.z / 2));	
+						food.transform.position = new Vector3 (Random.Range (transform.position.x - 1 + transform.lossyScale.x / 2, transform.position.x + 1 - transform.lossyScale.x / 2), transform.position.y, Random.Range (transform.position.z - 1 + transform.lossyScale.z / 2, transform.position.z + 1 - transform.lossyScale.z / 2));	
 					}
 				}
 			}

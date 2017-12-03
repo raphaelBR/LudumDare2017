@@ -18,7 +18,7 @@ public class JukeBox : MonoBehaviour {
 	[Space(10f)]
 	public List<AudioClip> levels;
 
-	private Light disco;
+	private CameraFilterPack_Color_RGB disco;
 	private float discoRatio;
 
 	private bool isShaking = false;
@@ -32,7 +32,7 @@ public class JukeBox : MonoBehaviour {
 
 	void Awake () {
 		source = GetComponent<AudioSource> ();
-		disco = FindObjectOfType<Light> ().GetComponent<Light> ();
+		disco = GetComponent<CameraFilterPack_Color_RGB> ();
 		ChangeSong (1);
 		StartCoroutine (SoundUp ());
 		originalPos = transform.localPosition;
@@ -53,9 +53,9 @@ public class JukeBox : MonoBehaviour {
 		source.clip = levels [level - 1];
 
 		if (level <= 3) {
-			disco.color = Color.white;
+			disco.ColorRGB = Color.white;
 		} else {
-			if (disco.color == Color.white) {
+			if (disco.ColorRGB == Color.white) {
 				StartCoroutine (Disco ());
 			}
 		}
@@ -93,12 +93,12 @@ public class JukeBox : MonoBehaviour {
 	}
 
 	IEnumerator Disco () {
-		disco.color = Random.ColorHSV ();
-		while (disco.color == Color.white) {
-			disco.color = Random.ColorHSV ();
+		disco.ColorRGB = new Color (Random.Range (0.5f, 1f), Random.Range (0.5f, 1f), Random.Range (0.5f, 1f));
+		while (disco.ColorRGB == Color.white) {
+			disco.ColorRGB = new Color (Random.Range (0.5f, 1f), Random.Range (0.5f, 1f), Random.Range (0.5f, 1f));
 		}
 		yield return new WaitForSeconds (discoRatio);
-		if (disco.color != Color.white) {
+		if (disco.ColorRGB != Color.white) {
 			StartCoroutine (Disco ());
 		}
 	}

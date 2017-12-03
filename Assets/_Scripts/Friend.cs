@@ -48,18 +48,7 @@ public class Friend : Guest {
 	{
 		base.Thirsty ();
 	}
-
-	IEnumerator Wait ()
-	{
-		yield return new WaitForSeconds (Random.Range (waitingDelayMin, waitingDelayMax));
-		Move ();
-	}
-
-	void Move ()
-	{
-		agent.SetDestination (manager.GiveDestination(agent.transform.position.y));
-		StartCoroutine (Wait ());
-	}
+		
 
 	void Puke()
 	{

@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class EnemyManager : MonoBehaviour {
 
-	public enum Rooms {Garden, Kitchen, Dining, Bedroom, Toilets}
+	public enum Rooms {Kitchen, Dining, Bedroom}
 
 	public OptimisationPool friendPool;
 	public OptimisationPool studentPool;
@@ -16,11 +16,9 @@ public class EnemyManager : MonoBehaviour {
 	public float quantityIncrement = 1f;
 	public float delayIncrement = 1f;
 	[Space(10f)]
-	public Transform gardenLimits;
 	public Transform kitchenLimits;
 	public Transform diningLimits;
 	public Transform bedroomLimits;
-	public Transform toiletsLimits;
 
 	void Awake () {
 		StartCoroutine (Spawning ());
@@ -63,9 +61,6 @@ public class EnemyManager : MonoBehaviour {
 	public Vector3 GiveDestination (float constantY) {
 		Transform roomTransform;
 		switch ((Rooms)Random.Range (0, System.Enum.GetValues (typeof(Rooms)).Length)) {
-		case Rooms.Garden:
-			roomTransform = gardenLimits;
-			break;
 		case Rooms.Kitchen:
 			roomTransform = kitchenLimits;
 			break;
@@ -75,11 +70,8 @@ public class EnemyManager : MonoBehaviour {
 		case Rooms.Bedroom:
 			roomTransform = bedroomLimits;
 			break;
-		case Rooms.Toilets:
-			roomTransform = toiletsLimits;
-			break;
 		default:
-			roomTransform = gardenLimits;
+			roomTransform = diningLimits;
 			break;
 		}
 		return new Vector3 (Random.Range (roomTransform.position.x + roomTransform.lossyScale.x / 2, roomTransform.position.x - roomTransform.lossyScale.x / 2), 	constantY, Random.Range (roomTransform.position.z + roomTransform.lossyScale.z / 2, roomTransform.position.z - roomTransform.lossyScale.z / 2));

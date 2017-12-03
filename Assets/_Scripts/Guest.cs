@@ -60,6 +60,7 @@ public abstract class Guest : MonoBehaviour {
 	[SerializeField]
 	protected SpriteRenderer madBubble;
 
+	[SerializeField]
 	protected bool unsatisfied;
 
 	[SerializeField]
@@ -127,9 +128,7 @@ public abstract class Guest : MonoBehaviour {
 //			Debug.Log ("I drink Juice / Alcolism level at " + alcoolismLevel);
 			eventmanager.juiceSource.actives[0].GetComponent<OptimisationItem> ().Despawn ();
 			Satisfy ();
-		}
-
-		if(eventmanager.vodkaSource.actives.Count > 0){
+		}else if(eventmanager.vodkaSource.actives.Count > 0){
 			alcoolismLevel += alcoolismRate;
 //			Debug.Log ("I drink Vodka / Alcolism level at " + alcoolismLevel);
 			eventmanager.vodkaSource.actives[0].GetComponent<OptimisationItem> ().Despawn ();
@@ -164,7 +163,19 @@ public abstract class Guest : MonoBehaviour {
 
 	protected virtual void Hungry ()
 	{
+		
 		EatFood ();
+	}
+	protected virtual void Move (EnemyManager.Rooms room = EnemyManager.Rooms.Null)
+	{
+		agent.SetDestination (manager.GiveDestination(agent.transform.position.y, room));
+		StartCoroutine (Wait ());
+	}
+
+	protected IEnumerator Wait ()
+	{
+		yield return new WaitForSeconds (Random.Range (waitingDelayMin, waitingDelayMax));
+		Move ();
 	}
 
 	protected virtual void Thirsty ()
