@@ -390,9 +390,9 @@ MonoBehaviour:
   alcoolismLimit: 50
   alcoolismRate: 10
   noDrinksMayhemLevel: 0.1
-  thirstDelay: 1.5
-  hungerDelay: 4
-  musicDelay: 2
+  thirstDelay: 10
+  hungerDelay: 20
+  musicDelay: 20
   fightParticles: {fileID: 198517975813712964}
   weedParticles: {fileID: 0}
   sickBubble: {fileID: 212306639558535674}
@@ -405,8 +405,8 @@ MonoBehaviour:
   mayhemIncreaseValue: 0.2
   studentAlcolismLevel2: 70
   AlcolismResetLevel: 20
-  pukeDelay: 3
-  fightDelay: 3
+  pukeDelay: 5
+  fightDelay: 5
   fightDuration: 5
 --- !u!114 &114688053369435454
 MonoBehaviour:

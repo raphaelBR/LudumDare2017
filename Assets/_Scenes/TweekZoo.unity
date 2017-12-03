@@ -33958,7 +33958,7 @@ Prefab:
     - target: {fileID: 114123515891936032, guid: 305da2a6cdbfc694a9aec0efdbc2675f,
         type: 2}
       propertyPath: delayIncrement
-      value: 3
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 114123515891936032, guid: 305da2a6cdbfc694a9aec0efdbc2675f,
         type: 2}
@@ -43085,7 +43085,7 @@ Prefab:
     - target: {fileID: 224353506877667374, guid: cdeae228ace00e44a90f471447dcf744,
         type: 2}
       propertyPath: m_LocalPosition.x
-      value: 532.5
+      value: 603.5
       objectReference: {fileID: 0}
     - target: {fileID: 224353506877667374, guid: cdeae228ace00e44a90f471447dcf744,
         type: 2}

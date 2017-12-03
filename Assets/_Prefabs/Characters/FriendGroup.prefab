@@ -448,10 +448,10 @@ MonoBehaviour:
   waitingDelayMax: 15
   alcoolismLevel: 0
   alcoolismLimit: 30
-  alcoolismRate: 5
+  alcoolismRate: 10
   noDrinksMayhemLevel: 0.1
-  thirstDelay: 3
-  hungerDelay: 5
+  thirstDelay: 30
+  hungerDelay: 30
   musicDelay: 0
   fightParticles: {fileID: 0}
   weedParticles: {fileID: 0}
