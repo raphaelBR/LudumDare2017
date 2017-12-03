@@ -16,15 +16,7 @@ public class JukeBox : MonoBehaviour {
 	public float shake2 = 0.2f;
 	public float shake3 = 0.5f;
 	[Space(10f)]
-	public List<AudioClip> level1;
-	public List<AudioClip> level2;
-	public List<AudioClip> level3;
-	public List<AudioClip> level4;
-	public List<AudioClip> level5;
-	public List<AudioClip> level6;
-	public List<AudioClip> level7;
-	public List<AudioClip> level8;
-	public List<AudioClip> level9;
+	public List<AudioClip> levels;
 
 	private Light disco;
 	private float discoRatio;
@@ -58,56 +50,58 @@ public class JukeBox : MonoBehaviour {
 	}
 
 	public void ChangeSong(int level) {
+		source.clip = levels [level - 1];
+		if (level <= 3) {
+
+		} else {
+
+		}
+		if (level <= 6) {
+
+		} else {
+
+		}
 		switch (level) {
 		case 1:
-			source.clip = level1 [Random.Range (0, level1.Count - 1)];
 			RestoreLight ();
 			isShaking = false;
 			break;
 		case 2:
-			source.clip = level2 [Random.Range (0, level2.Count - 1)];
 			RestoreLight ();
 			isShaking = false;
 			break;
 		case 3:
-			source.clip = level3 [Random.Range (0, level3.Count - 1)];
 			RestoreLight ();
 			isShaking = false;
 			break;
 		case 4:
-			source.clip = level4 [Random.Range (0, level4.Count - 1)];
 			ChangeLight ();
 			isShaking = false;
 			discoRatio = disco1;
 			break;
 		case 5:
-			source.clip = level5 [Random.Range (0, level5.Count - 1)];
 			ChangeLight ();
 			isShaking = false;
 			discoRatio = disco2;
 			break;
 		case 6:
-			source.clip = level6 [Random.Range (0, level6.Count - 1)];
 			ChangeLight ();
 			isShaking = false;
 			discoRatio = disco3;
 			break;
 		case 7:
-			source.clip = level7 [Random.Range (0, level7.Count - 1)];
 			ChangeLight ();
 			isShaking = true;
 			discoRatio = disco4;
 			shakeAmount = shake1;
 			break;
 		case 8:
-			source.clip = level8 [Random.Range (0, level8.Count - 1)];
 			ChangeLight ();
 			isShaking = true;
 			discoRatio = disco5;
 			shakeAmount = shake2;
 			break;
 		case 9:
-			source.clip = level9 [Random.Range (0, level9.Count - 1)];
 			ChangeLight ();
 			isShaking = true;
 			discoRatio = disco6;

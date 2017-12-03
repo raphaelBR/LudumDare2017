@@ -136,8 +136,8 @@ MonoBehaviour:
   item: 0
   itemImage: {fileID: 212224559900341146}
   mopSprite: {fileID: 21300000, guid: 58cdd6af7faafa246bc8b523eb2a9aac, type: 3}
-  pizzaSprite: {fileID: 21300000, guid: aa1ee4f7beafe4f48a0f876bd5765e5d, type: 3}
-  chipsSprite: {fileID: 21300000, guid: a5c353197174e7542bf68bf7e7d8b24a, type: 3}
+  pizzaSprite: {fileID: 21300000, guid: fdb1a310d37d6074080884f4022cc835, type: 3}
+  chipsSprite: {fileID: 21300000, guid: b65295522a268664ba9b8968b5398205, type: 3}
   juiceSprite: {fileID: 21300000, guid: 4a00a25bc462fe14b992fe9f6668da83, type: 3}
   beerSprite: {fileID: 21300000, guid: 9058cda25f3391e4e93d837d756f9c22, type: 3}
   pauseDuration: 0.2
@@ -358,7 +358,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_Sprite: {fileID: 0}
-  m_Color: {r: 1, g: 0, b: 0, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0

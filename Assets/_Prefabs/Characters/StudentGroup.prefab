@@ -22,6 +22,7 @@ GameObject:
   - component: {fileID: 212949453046250646}
   - component: {fileID: 114873502964165872}
   - component: {fileID: 95954408239600514}
+  - component: {fileID: 114730068423207232}
   m_Layer: 0
   m_Name: Student
   m_TagString: Untagged
@@ -135,6 +136,17 @@ MonoBehaviour:
   pukeDelay: 3
   fightDelay: 3
   fightDuration: 5
+--- !u!114 &114730068423207232
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1585475944187072}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 61a1d500ac052f643966978fac21a04f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &114873502964165872
 MonoBehaviour:
   m_ObjectHideFlags: 1

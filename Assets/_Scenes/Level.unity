@@ -431,7 +431,6 @@ MonoBehaviour:
   - {fileID: 8300000, guid: 5c049c89b33af694a810efba18be20dd, type: 3}
   level2:
   - {fileID: 8300000, guid: 4e4ae92502fce3a4280fca357b06e65a, type: 3}
-  - {fileID: 8300000, guid: 5b6ec1b9d436fc141bfc7db388e2fc6f, type: 3}
   level3:
   - {fileID: 8300000, guid: 64858be9920b6e346afe9be7cc1a5121, type: 3}
   level4:
