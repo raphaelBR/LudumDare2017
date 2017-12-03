@@ -58,6 +58,7 @@
      <Compile Include="Assets\_Scripts\EndOfScene.cs" />
      <Compile Include="Assets\_Scripts\EnemyManager.cs" />
      <Compile Include="Assets\_Scripts\EventManager.cs" />
+     <Compile Include="Assets\_Scripts\Flipper.cs" />
      <Compile Include="Assets\_Scripts\Friend.cs" />
      <Compile Include="Assets\_Scripts\Guest.cs" />
      <Compile Include="Assets\_Scripts\Initializer.cs" />

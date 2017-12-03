@@ -12,7 +12,7 @@ public class OptimisationPool : MonoBehaviour {
 	public List<GameObject> actives;
 
 	GameObject Create () {
-		GameObject o = Instantiate (prefab.gameObject, transform.position, transform.rotation);
+		GameObject o = Instantiate (prefab.gameObject);
 		reserve.Add (o);
 		o.transform.parent = null;
 		o.GetComponent<OptimisationItem> ().pool = this.gameObject.GetComponent<OptimisationPool> ();
@@ -27,7 +27,6 @@ public class OptimisationPool : MonoBehaviour {
 		}
 		item = reserve [0];
 		item.transform.position = transform.position;
-		item.transform.rotation = transform.rotation;
 		item.SetActive (true);
 		reserve.Remove (item);
 		actives.Add (item);

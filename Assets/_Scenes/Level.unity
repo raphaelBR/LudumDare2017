@@ -173,6 +173,11 @@ Prefab:
       propertyPath: m_WasSpriteAssigned
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 212828303909209806, guid: 43c34afd131c5944d90ea38f4b82c57a,
+        type: 2}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 43c34afd131c5944d90ea38f4b82c57a, type: 2}
   m_IsPrefabParent: 0
@@ -400,7 +405,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 3
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 59.558002, y: 0, z: 0}
 --- !u!114 &355871520
 MonoBehaviour:
@@ -751,12 +756,12 @@ Prefab:
     - target: {fileID: 114123515891936032, guid: 305da2a6cdbfc694a9aec0efdbc2675f,
         type: 2}
       propertyPath: quantityIncrement
-      value: -1
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 114123515891936032, guid: 305da2a6cdbfc694a9aec0efdbc2675f,
         type: 2}
       propertyPath: delayIncrement
-      value: 500
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 114123515891936032, guid: 305da2a6cdbfc694a9aec0efdbc2675f,
         type: 2}
@@ -771,6 +776,39 @@ Prefab:
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 305da2a6cdbfc694a9aec0efdbc2675f, type: 2}
   m_IsPrefabParent: 0
+--- !u!1 &508224252 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 1256300417386350, guid: 43c34afd131c5944d90ea38f4b82c57a,
+    type: 2}
+  m_PrefabInternal: {fileID: 167576004}
+--- !u!95 &508224256
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 508224252}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: d29144ee3652c234e9ef53d830609828, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+--- !u!114 &508224257
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 508224252}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 61a1d500ac052f643966978fac21a04f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &555535026
 GameObject:
   m_ObjectHideFlags: 0
@@ -834,7 +872,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 4
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 50, y: -30, z: 0}
 --- !u!1001 &600074456
 Prefab:
