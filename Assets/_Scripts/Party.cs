@@ -68,6 +68,8 @@ public class Party: Guest {
 		weedParticles.gameObject.SetActive (true);
 //		Debug.Log("Party Guy is getting High");
 		Invoke("FinishSmoking", smokingTime);
+		sound.clip = ganjaSound;
+		sound.Play ();
 	}
 
 	void FinishSmoking()

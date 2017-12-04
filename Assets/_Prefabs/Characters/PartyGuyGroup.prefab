@@ -281,7 +281,7 @@ AudioSource:
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 0}
-  m_PlayOnAwake: 1
+  m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
   Loop: 0
@@ -418,6 +418,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   waitingDelayMin: 10
   waitingDelayMax: 15
+  pukeSound: {fileID: 8300000, guid: 611dcffd4d78ca343a415961fb324a2a, type: 3}
+  ganjaSound: {fileID: 8300000, guid: 746ae73541344ad4f88cf9eb1122cd52, type: 3}
+  fightSound: {fileID: 8300000, guid: e0b41125653ff944db1902f13e35353e, type: 3}
+  madSound: {fileID: 8300000, guid: 34176848da03a4246ab63ac8cb420afd, type: 3}
   alcoolismLevel: 0
   alcoolismLimit: 50
   alcoolismRate: 10

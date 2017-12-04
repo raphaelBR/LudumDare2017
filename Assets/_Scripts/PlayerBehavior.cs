@@ -22,10 +22,12 @@ public class PlayerBehavior : MonoBehaviour {
 
 	private NavMeshAgent agent;
 	private TransformExtension transf;
+	private AudioSource sound;
 
 	void Start () {
 		agent = GetComponent<NavMeshAgent> ();
 		transf = GetComponent<TransformExtension> ();
+		sound = GetComponent<AudioSource> ();
 	}
 
 	void Update () {
@@ -44,6 +46,7 @@ public class PlayerBehavior : MonoBehaviour {
 
 	public bool TakeItem (Item takenItem) {
 		if (item == Item.None) {
+			sound.Play ();
 			switch (takenItem) {
 			case Item.Mop:
 				itemImage.sprite = mopSprite;
@@ -75,6 +78,7 @@ public class PlayerBehavior : MonoBehaviour {
 
 	public bool DropItem (Item droppedItem) {
 		if (item == droppedItem) {
+			sound.Play ();
 			StartCoroutine (Pause ());
 			item = Item.None;
 			itemImage.sprite = null;

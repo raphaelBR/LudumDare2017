@@ -54,7 +54,7 @@ public class EventManager : MonoBehaviour {
 		if (pukeSource.actives.Count > 0 && timer >= 1f)
 		{
 			IncreaseMayhem ((float)pukeSource.actives.Count * pukeRatio);
-			Debug.Log ("Puke party");
+//			Debug.Log ("Puke party");
 			timer = 0f;
 		}
 		MayhemBar.fillAmount  = currentMayhemLevel / maxLevelMayhem;

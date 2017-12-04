@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
+using UnityEngine.Audio;
 
 public abstract class Guest : MonoBehaviour {
 
@@ -20,6 +21,15 @@ public abstract class Guest : MonoBehaviour {
 	protected float waitingDelayMax = 15f;
 
 	protected EnemyManager manager;
+
+	[SerializeField]
+	protected AudioClip pukeSound;
+	[SerializeField]
+	protected AudioClip ganjaSound;
+	[SerializeField]
+	protected AudioClip fightSound;
+	[SerializeField]
+	protected AudioClip madSound;
 
 	[SerializeField]
 	protected float alcoolismLevel = 0f;
@@ -66,9 +76,11 @@ public abstract class Guest : MonoBehaviour {
 	[SerializeField]
 	protected float mayhemIncreaseValue = 0.2f;
 	private float timer;
+	protected AudioSource sound;
 
 
 	void Awake () {
+		sound = GetComponent<AudioSource> ();
 		agent = GetComponent<NavMeshAgent> ();
 		anim = GetComponentInChildren<Animator> ();
 		anim.SetBool ("Moving", false);
@@ -221,6 +233,8 @@ public abstract class Guest : MonoBehaviour {
 
 	protected void Puke ()
 	{
+		sound.clip = pukeSound;
+		sound.Play ();
 		eventmanager.MakePuke (transform);
 		sickBubble.enabled = false;
 		StartCoroutine (ToggleBubble (cleanBubble));

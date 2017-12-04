@@ -45,6 +45,8 @@ public class Student : Guest {
 			state.Enqueue (GuestStates.Fighting);
 //			Debug.Log ("Student Will start Fighting in " + fightDelay);
 			madBubble.enabled = true;
+			sound.clip = madSound;
+			sound.Play ();
 			ChangeLayer (2);
 			Invoke ("Fight", fightDelay);
 		}
@@ -75,6 +77,8 @@ public class Student : Guest {
 	void Fight()
 	{
 		//Increase level of mayhem
+		sound.clip = fightSound;
+		sound.Play ();
 		madBubble.enabled = false;
 		fightParticles.gameObject.SetActive (true);
 //		Debug.Log ("Student Is Fighting for " + fightDuration + " Seconds");

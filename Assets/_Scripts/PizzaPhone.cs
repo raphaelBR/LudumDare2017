@@ -12,13 +12,16 @@ public class PizzaPhone : MonoBehaviour {
 	private PizzaGuy dude;
 
 	public float cooldownDelay = 5f;
+	private AudioSource sound;
 
 	void Start () {
 		dude = FindObjectOfType<PizzaGuy> ().GetComponent<PizzaGuy> ();
+		sound = GetComponent<AudioSource> ();
 	}
 
 	public void Call () {
 		if (available == true) {
+			sound.Play ();
 			dude.Deliver ();
 			StartCoroutine (Cooldown ());
 		}
