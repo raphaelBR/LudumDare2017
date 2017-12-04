@@ -30,8 +30,7 @@ public class Student : Guest {
 
 	protected override void Start ()
 	{
-
-		Move ();
+		
 		base.Start ();
 		//eventmanager.beerSource.actives.Count;
 		//eventmanager.beerSource.actives [0].GetComponent<OptimisationItem> ().Despawn ();

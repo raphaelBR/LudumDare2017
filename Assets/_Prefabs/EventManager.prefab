@@ -52,8 +52,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   MayhemBar: {fileID: 0}
-  maxLevelMayhem: 100
+  maxLevelMayhem: 1000
   animationSpeed: 0.2
+  pukeRatio: 0.05
   juiceSource: {fileID: 0}
   beerSource: {fileID: 0}
   vodkaSource: {fileID: 0}
@@ -61,3 +62,4 @@ MonoBehaviour:
   pizzaSource: {fileID: 0}
   table: {fileID: 0}
   pukeSource: {fileID: 0}
+  overScene: Over

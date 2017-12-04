@@ -22,6 +22,8 @@ public class EnemyManager : MonoBehaviour {
 	public Transform bedroomLimits;
 	public Transform tableLimits;
 
+	public AudioSource background;
+
 	void Awake () {
 		StartCoroutine (Spawning ());
 	}
@@ -58,9 +60,12 @@ public class EnemyManager : MonoBehaviour {
 		yield return new WaitForSeconds (spawnDelay);
 		spawnQuantity += quantityIncrement;
 		spawnDelay += delayIncrement;
-		if (friendPool.actives.Count + partyPool.actives.Count + studentPool.actives.Count <= spawnMaximum) {
-			StartCoroutine (Spawning ());
+		if (friendPool.actives.Count + partyPool.actives.Count + studentPool.actives.Count >= spawnMaximum) {
+			spawnQuantity = 1;
+			spawnDelay += delayIncrement * 2;
 		}
+		background.volume = Mathf.Clamp((friendPool.actives.Count + partyPool.actives.Count + studentPool.actives.Count) / (float)spawnMaximum, 0f, 1f);
+		StartCoroutine (Spawning ());
 	}
 
 	public Vector3 GiveDestination (float constantY, Rooms room = Rooms.Null) {

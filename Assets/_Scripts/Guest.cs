@@ -96,6 +96,7 @@ public abstract class Guest : MonoBehaviour {
 	protected virtual void Start () {
 		StartCoroutine (ThirstTimer ());
 		StartCoroutine (HungerTimer ());
+		agent.SetDestination (manager.GiveDestination (agent.transform.position.y));
 	}
 
 	protected virtual void Update () {
@@ -115,8 +116,7 @@ public abstract class Guest : MonoBehaviour {
 		}
 
 		if (state.Count != 0) {
-			switch (state.Peek())
-			{
+			switch (state.Peek ()) {
 			case GuestStates.Hungry:
 				Hungry ();
 				Move (EnemyManager.Rooms.Kitchen);
@@ -132,6 +132,8 @@ public abstract class Guest : MonoBehaviour {
 				Move ();
 				break;
 			}
+		} else {
+			Move ();
 		}
 	}
 
@@ -141,15 +143,18 @@ public abstract class Guest : MonoBehaviour {
 			alcoolismLevel += alcoolismRate;
 			//			Debug.Log ("I drink beer / Alcolism level at " + alcoolismLevel);
 			Satisfy ();
-			eventmanager.beerSource.actives[0].GetComponent<AutoDestruction> ().SelfDestruct ();	
+			eventmanager.beerSource.actives[0].GetComponent<AutoDestruction> ().SelfDestruct ();
+			eventmanager.beerSource.actives[0].GetComponent<OptimisationItem> ().Despawn ();		
 		}else if(eventmanager.juiceSource.actives.Count > 0){
 			//			Debug.Log ("I drink Juice / Alcolism level at " + alcoolismLevel);
 			Satisfy ();
 			eventmanager.juiceSource.actives[0].GetComponent<AutoDestruction> ().SelfDestruct ();	
+			eventmanager.juiceSource.actives[0].GetComponent<OptimisationItem> ().Despawn ();	
 		}else if(eventmanager.vodkaSource.actives.Count > 0){
 			alcoolismLevel += alcoolismRate;
 			Satisfy ();
 			eventmanager.vodkaSource.actives[0].GetComponent<AutoDestruction> ().SelfDestruct ();	
+			eventmanager.vodkaSource.actives[0].GetComponent<OptimisationItem> ().Despawn ();	
 //			Debug.Log ("I drink Vodka / Alcolism level at " + alcoolismLevel);
 		}
 		else {
@@ -165,12 +170,14 @@ public abstract class Guest : MonoBehaviour {
 			//			Debug.Log ("Eating Pizza");
 			Satisfy ();
 			eventmanager.pizzaSource.actives[0].GetComponent<AutoDestruction> ().SelfDestruct ();	
+			eventmanager.pizzaSource.actives[0].GetComponent<OptimisationItem> ().Despawn ();
 		}
 		else if(eventmanager.chipsSource.actives.Count > 0)
 		{
 			//			Debug.Log ("Eating Chips");
 			Satisfy ();
-			eventmanager.chipsSource.actives[0].GetComponent<AutoDestruction> ().SelfDestruct ();	
+			eventmanager.chipsSource.actives[0].GetComponent<AutoDestruction> ().SelfDestruct ();
+			eventmanager.chipsSource.actives[0].GetComponent<OptimisationItem> ().Despawn ();		
 		}
 		else {
 			foodBubble.enabled = true;
@@ -185,7 +192,9 @@ public abstract class Guest : MonoBehaviour {
 	}
 	protected virtual void Move (EnemyManager.Rooms room = EnemyManager.Rooms.Null)
 	{
-		agent.SetDestination (manager.GiveDestination(agent.transform.position.y, room));
+		if (Vector3.Distance(agent.destination, transform.position) <= 3f) {
+			agent.SetDestination (manager.GiveDestination (agent.transform.position.y, room));
+		}
 	}
 		
 	protected virtual void Thirsty ()
@@ -203,7 +212,7 @@ public abstract class Guest : MonoBehaviour {
 
 	IEnumerator ThirstTimer ()
 	{
-		yield return new WaitForSeconds (thirstDelay);
+		yield return new WaitForSeconds (Random.Range(thirstDelay * 0.25f, thirstDelay * 2f));
 		if (!state.Contains (GuestStates.Thirsty) && !state.Contains(GuestStates.Sick)
 			&& !state.Contains(GuestStates.Fighting))
 		{
@@ -215,7 +224,7 @@ public abstract class Guest : MonoBehaviour {
 
 	IEnumerator HungerTimer ()
 	{
-		yield return new WaitForSeconds (hungerDelay);
+		yield return new WaitForSeconds (Random.Range(hungerDelay * 0.25f, hungerDelay * 2f));
 		if (!state.Contains (GuestStates.Hungry) && !state.Contains(GuestStates.Sick)
 			&& !state.Contains(GuestStates.Fighting))
 		{
@@ -245,13 +254,6 @@ public abstract class Guest : MonoBehaviour {
 			anim.SetLayerWeight (i, 0);
 		}
 		anim.SetLayerWeight (id, 1);
-	}
-
-	protected IEnumerator NoDrinks()
-	{
-		yield return new WaitForSeconds (1);
-		eventmanager.IncreaseMayhem (noDrinksMayhemLevel);
-		StartCoroutine (NoDrinks());
 	}
 
 	IEnumerator ToggleBubble (SpriteRenderer bubble) {

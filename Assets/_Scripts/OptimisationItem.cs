@@ -11,7 +11,6 @@ public class OptimisationItem : MonoBehaviour {
 		if (pool != null) {
 			pool.reserve.Add (gameObject);
 			pool.actives.Remove (gameObject);
-			gameObject.transform.position = pool.transform.position;
 		}
 	}
 }

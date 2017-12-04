@@ -53,7 +53,9 @@ public class AutoDestruction : MonoBehaviour {
 	}
 
 	public void SelfDestruct () {
-		StartCoroutine (Agony ());
+		if (gameObject.activeSelf == true) {
+			StartCoroutine (Agony ());
+		}
 	}
 
 	void OnCollisionEnter (Collision other) {

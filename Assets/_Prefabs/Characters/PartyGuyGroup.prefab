@@ -425,9 +425,9 @@ MonoBehaviour:
   alcoolismLevel: 0
   alcoolismLimit: 50
   alcoolismRate: 10
-  noDrinksMayhemLevel: 0.1
-  thirstDelay: 10
-  hungerDelay: 20
+  noDrinksMayhemLevel: 0
+  thirstDelay: 15
+  hungerDelay: 15
   musicDelay: 10
   fightParticles: {fileID: 0}
   weedParticles: {fileID: 198940035843001420}
@@ -438,7 +438,7 @@ MonoBehaviour:
   weedBubble: {fileID: 212201767661738136}
   madBubble: {fileID: 0}
   unsatisfied: 0
-  mayhemIncreaseValue: 0.2
+  mayhemIncreaseValue: 0.06
   AlcolismResetLevel: 30
   partyGuyHighLevel: 70
   smokingTime: 5

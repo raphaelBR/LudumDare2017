@@ -18,6 +18,9 @@ public class EventManager : MonoBehaviour {
 	[SerializeField]
 	private float pukeRatio = 0.05f;
 
+	[SerializeField]
+	private Text timeText;
+
 	public OptimisationPool juiceSource;
 	public OptimisationPool beerSource;
 	public OptimisationPool vodkaSource;
@@ -39,8 +42,11 @@ public class EventManager : MonoBehaviour {
 
 	private int soundLevel = 1;
 
+	private float survivedTime = 0f;
+
 	void Start ()
 	{
+		survivedTime = 0f;
 		MayhemBar.fillAmount = 0.0f;	
 		timer = 0f;
 		soundLevel = 1;
@@ -51,6 +57,8 @@ public class EventManager : MonoBehaviour {
 	void Update ()
 	{
 		timer += Time.deltaTime;
+		survivedTime += Time.deltaTime;
+		timeText.text = "Score: " + (Mathf.Round(survivedTime*100)/100).ToString ();
 		if (pukeSource.actives.Count > 0 && timer >= 1f)
 		{
 			IncreaseMayhem ((float)pukeSource.actives.Count * pukeRatio);
@@ -64,6 +72,7 @@ public class EventManager : MonoBehaviour {
 	{
 		currentMayhemLevel += value;
 		if (currentMayhemLevel >= maxLevelMayhem) {
+			PlayerPrefs.SetFloat ("Score", survivedTime);
 			SceneManager.LoadScene (overScene);
 		}
 		if ((currentMayhemLevel / (maxLevelMayhem/10f)) > (float)soundLevel){

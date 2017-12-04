@@ -534,9 +534,9 @@ MonoBehaviour:
   alcoolismLevel: 0
   alcoolismLimit: 30
   alcoolismRate: 10
-  noDrinksMayhemLevel: 0.1
-  thirstDelay: 30
-  hungerDelay: 30
+  noDrinksMayhemLevel: 0
+  thirstDelay: 16
+  hungerDelay: 16
   musicDelay: 0
   fightParticles: {fileID: 0}
   weedParticles: {fileID: 0}
@@ -547,7 +547,7 @@ MonoBehaviour:
   weedBubble: {fileID: 0}
   madBubble: {fileID: 0}
   unsatisfied: 0
-  mayhemIncreaseValue: 0.2
+  mayhemIncreaseValue: 0.06
   AlcolismResetLevel: 10
   pukeDelay: 10
 --- !u!135 &135500250469701454
@@ -575,7 +575,7 @@ NavMeshAgent:
   m_Acceleration: 8
   avoidancePriority: 50
   m_AngularSpeed: 120
-  m_StoppingDistance: 0
+  m_StoppingDistance: 3
   m_AutoTraverseOffMeshLink: 1
   m_AutoBraking: 1
   m_AutoRepath: 1
