@@ -7,7 +7,7 @@ using UnityEngine.UI;
 [RequireComponent(typeof(NavMeshAgent))]
 public class PlayerBehavior : MonoBehaviour {
 
-	public enum Item {None, Mop, Pizza, Chips, Juice, Beer}
+	public enum Item {None, Mop, Pizza, Chips, Juice, Beer, Vodka}
 	public Item item = Item.None;
 
 	public SpriteRenderer itemImage;
@@ -16,6 +16,7 @@ public class PlayerBehavior : MonoBehaviour {
 	public Sprite chipsSprite;
 	public Sprite juiceSprite;
 	public Sprite beerSprite;
+	public Sprite vodkaSprite;
 
 	public float pauseDuration = 0.1f;
 
@@ -58,6 +59,9 @@ public class PlayerBehavior : MonoBehaviour {
 				break;
 			case Item.Beer:
 				itemImage.sprite = beerSprite;
+				break;
+			case Item.Vodka:
+				itemImage.sprite = vodkaSprite;
 				break;
 			default:
 				break;

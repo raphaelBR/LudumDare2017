@@ -123,67 +123,45 @@ public abstract class Guest : MonoBehaviour {
 		}
 	}
 
-	void DespawnBeer(){
-		eventmanager.beerSource.actives[0].GetComponent<OptimisationItem> ().Despawn ();	
-	}
-
-	void DespawnJuice(){
-		eventmanager.juiceSource.actives[0].GetComponent<OptimisationItem> ().Despawn ();
-	}
-
-	void DespawnVodka(){
-		eventmanager.vodkaSource.actives[0].GetComponent<OptimisationItem> ().Despawn ();
-	}
-
 	protected virtual void DrinkAlcohol ()
 	{
 		if (eventmanager.beerSource.actives.Count > 0) {
 			alcoolismLevel += alcoolismRate;
 			//			Debug.Log ("I drink beer / Alcolism level at " + alcoolismLevel);
 			Satisfy ();
-			Invoke("DespawnBeer", 2);
+			eventmanager.beerSource.actives[0].GetComponent<AutoDestruction> ().SelfDestruct ();	
 		}else if(eventmanager.juiceSource.actives.Count > 0){
 			//			Debug.Log ("I drink Juice / Alcolism level at " + alcoolismLevel);
 			Satisfy ();
-			Invoke("DespawnJuicer", 2);
+			eventmanager.juiceSource.actives[0].GetComponent<AutoDestruction> ().SelfDestruct ();	
 		}else if(eventmanager.vodkaSource.actives.Count > 0){
 			alcoolismLevel += alcoolismRate;
 			Satisfy ();
-			Invoke("DespawnVodka", 2);
+			eventmanager.vodkaSource.actives[0].GetComponent<AutoDestruction> ().SelfDestruct ();	
 //			Debug.Log ("I drink Vodka / Alcolism level at " + alcoolismLevel);
 		}
 		else {
 //			Debug.Log ("There is no Drinks");
 			unsatisfied = true;
-			StartCoroutine (ToggleBubble (drinkBubble));
+			drinkBubble.enabled = true;
 		}
 	}
-
-
-	void DespawnPizza(){
-		eventmanager.pizzaSource.actives[0].GetComponent<OptimisationItem>().Despawn ();
-	}
-
-	void DespawnChips(){
-		eventmanager.chipsSource.actives[0].GetComponent<OptimisationItem>().Despawn ();
-	}
-
 
 	protected virtual void EatFood()
 	{
 		if (eventmanager.pizzaSource.actives.Count > 0) {
 			//			Debug.Log ("Eating Pizza");
 			Satisfy ();
-			Invoke(" DespawnPizza", 2);
+			eventmanager.pizzaSource.actives[0].GetComponent<AutoDestruction> ().SelfDestruct ();	
 		}
 		else if(eventmanager.chipsSource.actives.Count > 0)
 		{
 			//			Debug.Log ("Eating Chips");
 			Satisfy ();
-			Invoke("DespawnChips", 2);
+			eventmanager.chipsSource.actives[0].GetComponent<AutoDestruction> ().SelfDestruct ();	
 		}
 		else {
-			StartCoroutine (ToggleBubble (foodBubble));
+			foodBubble.enabled = true;
 			unsatisfied = true;
 //			Debug.Log ("There is no food");
 		}
@@ -204,6 +182,8 @@ public abstract class Guest : MonoBehaviour {
 	}
 
 	void Satisfy () {
+		foodBubble.enabled = false;
+		drinkBubble.enabled = false;
 		
 		unsatisfied = false;
 		state.Dequeue ();

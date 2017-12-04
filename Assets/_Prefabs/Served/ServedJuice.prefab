@@ -20,6 +20,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4716159787497300}
   - component: {fileID: 212812936315459350}
+  - component: {fileID: 114695772558512490}
   - component: {fileID: 114240203568716110}
   m_Layer: 0
   m_Name: ServedJuice
@@ -36,7 +37,7 @@ Transform:
   m_GameObject: {fileID: 1691132109955684}
   m_LocalRotation: {x: 0.7071068, y: -0, z: -0, w: 0.7071068}
   m_LocalPosition: {x: -22.48, y: 0.22, z: -12.35}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 2, y: 2, z: 2}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -53,6 +54,41 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   pool: {fileID: 0}
+--- !u!114 &114695772558512490
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1691132109955684}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 970ff2b66b8a232498b7507bce88ab23, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  beginOnStart: 0
+  destructionOnContact:
+    serializedVersion: 2
+    m_Bits: 0
+  destructionDelay: 0
+  vanish: 1
+  vanishingDelay: 0.5
+  disable: 1
+  lastWords:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 114240203568716110}
+        m_MethodName: Despawn
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
 --- !u!212 &212812936315459350
 SpriteRenderer:
   m_ObjectHideFlags: 1

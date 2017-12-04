@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class EventManager : MonoBehaviour {
 
@@ -32,17 +33,19 @@ public class EventManager : MonoBehaviour {
 
 	private float currentMayhemLevel = 0.0f;
 
+	public string overScene;
 
-	void OnEnable()
-	{
-		player = FindObjectOfType<PlayerBehavior> ().GetComponent<PlayerBehavior> ();
-		menu = FindObjectOfType<Menu> ().GetComponent<Menu> ();
-	}
+	private JukeBox juke;
+
+	private int soundLevel = 1;
 
 	void Start ()
 	{
 		MayhemBar.fillAmount = 0.0f;	
 		timer = 0f;
+		soundLevel = 1;
+		juke = FindObjectOfType<JukeBox> ().GetComponent<JukeBox> ();
+		player = FindObjectOfType<PlayerBehavior> ().GetComponent<PlayerBehavior> ();
 	}
 
 	void Update ()
@@ -54,19 +57,20 @@ public class EventManager : MonoBehaviour {
 			Debug.Log ("Puke party");
 			timer = 0f;
 		}
-		if (currentMayhemLevel > 100.0f)
-		{
-			currentMayhemLevel = 100.0f;
-		}
 		MayhemBar.fillAmount  = currentMayhemLevel / maxLevelMayhem;
 	}
 
 	public void IncreaseMayhem (float value)
 	{
 		currentMayhemLevel += value;
-		if ((float)MayhemBar.fillAmount >= maxLevelMayhem) {
-			menu.GoToDeath ();
+		if (currentMayhemLevel >= maxLevelMayhem) {
+			SceneManager.LoadScene (overScene);
 		}
+		if ((currentMayhemLevel / (maxLevelMayhem/10f)) > (float)soundLevel){
+			soundLevel = soundLevel + 1;
+			juke.ChangeSong (soundLevel);
+		} 
+
 	}
 
 	public void MakePuke (Transform transf)

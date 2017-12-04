@@ -17,6 +17,9 @@ public class ItemPlacement : MonoBehaviour {
 	[SerializeField]
 	int pizzaSpawnNumber = 40;
 
+	[SerializeField]
+	int vodkaSpawnNumber = 40;
+
 	public PlayerBehavior.Item item;
 	public bool taking = true;
 
@@ -48,6 +51,9 @@ public class ItemPlacement : MonoBehaviour {
 						break;
 					case PlayerBehavior.Item.Pizza:
 						k = pizzaSpawnNumber;
+						break;
+					case PlayerBehavior.Item.Vodka:
+						k = vodkaSpawnNumber;
 						break;
 					}
 

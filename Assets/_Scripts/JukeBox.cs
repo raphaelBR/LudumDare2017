@@ -34,7 +34,6 @@ public class JukeBox : MonoBehaviour {
 		source = GetComponent<AudioSource> ();
 		disco = GetComponent<CameraFilterPack_Color_RGB> ();
 		ChangeSong (1);
-		StartCoroutine (SoundUp ());
 		originalPos = transform.localPosition;
 	}
 
@@ -101,17 +100,5 @@ public class JukeBox : MonoBehaviour {
 		if (disco.ColorRGB != Color.white) {
 			StartCoroutine (Disco ());
 		}
-	}
-
-	IEnumerator SoundUp () {
-		yield return new WaitForSeconds (5f);
-		if (i < 9) {
-			i = i + 1;
-		} else {
-			i = 1;
-		}
-		ChangeSong (i);
-		//Debug.Log (i);
-		StartCoroutine (SoundUp ());
 	}
 }

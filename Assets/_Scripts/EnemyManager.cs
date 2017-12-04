@@ -15,6 +15,7 @@ public class EnemyManager : MonoBehaviour {
 	[Space(5f)]
 	public float quantityIncrement = 1f;
 	public float delayIncrement = 1f;
+	public int spawnMaximum = 50;
 	[Space(10f)]
 	public Transform kitchenLimits;
 	public Transform diningLimits;
@@ -57,7 +58,9 @@ public class EnemyManager : MonoBehaviour {
 		yield return new WaitForSeconds (spawnDelay);
 		spawnQuantity += quantityIncrement;
 		spawnDelay += delayIncrement;
-		StartCoroutine (Spawning ());
+		if (friendPool.actives.Count + partyPool.actives.Count + studentPool.actives.Count <= spawnMaximum) {
+			StartCoroutine (Spawning ());
+		}
 	}
 
 	public Vector3 GiveDestination (float constantY, Rooms room = Rooms.Null) {

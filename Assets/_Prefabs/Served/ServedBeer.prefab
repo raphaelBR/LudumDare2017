@@ -20,6 +20,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4236034423296642}
   - component: {fileID: 212970425164323678}
+  - component: {fileID: 114459600787448074}
   - component: {fileID: 114740086190411752}
   m_Layer: 0
   m_Name: ServedBeer
@@ -41,6 +42,41 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 90, y: 0, z: 0}
+--- !u!114 &114459600787448074
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1169073709769660}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 970ff2b66b8a232498b7507bce88ab23, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  beginOnStart: 0
+  destructionOnContact:
+    serializedVersion: 2
+    m_Bits: 0
+  destructionDelay: 0
+  vanish: 1
+  vanishingDelay: 0.5
+  disable: 1
+  lastWords:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 114740086190411752}
+        m_MethodName: Despawn
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
 --- !u!114 &114740086190411752
 MonoBehaviour:
   m_ObjectHideFlags: 1
