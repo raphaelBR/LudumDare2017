@@ -36,7 +36,9 @@ public abstract class Guest : MonoBehaviour {
 	[SerializeField]
 	protected float alcoolismLimit = 100f;
 	[SerializeField]
-	protected float alcoolismRate = 5f;
+	protected float beerAlcoolismRate = 5f;
+	[SerializeField]
+	protected float vodkaAlcoolismRate = 8f;
 
 	[SerializeField]
 	protected float noDrinksMayhemLevel = 0.1f;
@@ -140,18 +142,19 @@ public abstract class Guest : MonoBehaviour {
 	protected virtual void DrinkAlcohol ()
 	{
 		if (eventmanager.beerSource.actives.Count > 0) {
-			alcoolismLevel += alcoolismRate;
-			//			Debug.Log ("I drink beer / Alcolism level at " + alcoolismLevel);
+			alcoolismLevel += beerAlcoolismRate;
+			//Debug.Log ("I drink beer / Alcolism level at " + alcoolismLevel);
 			Satisfy ();
 			eventmanager.beerSource.actives[0].GetComponent<AutoDestruction> ().SelfDestruct ();
 			eventmanager.beerSource.actives[0].GetComponent<OptimisationItem> ().Despawn ();		
 		}else if(eventmanager.juiceSource.actives.Count > 0){
-			//			Debug.Log ("I drink Juice / Alcolism level at " + alcoolismLevel);
+			//Debug.Log ("I drink Juice / Alcolism level at " + alcoolismLevel);
+			eventmanager.IncreaseMayhem (mayhemIncreaseValue / 2);
 			Satisfy ();
 			eventmanager.juiceSource.actives[0].GetComponent<AutoDestruction> ().SelfDestruct ();	
 			eventmanager.juiceSource.actives[0].GetComponent<OptimisationItem> ().Despawn ();	
 		}else if(eventmanager.vodkaSource.actives.Count > 0){
-			alcoolismLevel += alcoolismRate;
+			alcoolismLevel += vodkaAlcoolismRate;
 			Satisfy ();
 			eventmanager.vodkaSource.actives[0].GetComponent<AutoDestruction> ().SelfDestruct ();	
 			eventmanager.vodkaSource.actives[0].GetComponent<OptimisationItem> ().Despawn ();	

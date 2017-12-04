@@ -34,7 +34,8 @@ public class Party: Guest {
 
 		if (alcoolismLevel >= alcoolismLimit && !turboMode)
 		{
-			alcoolismRate *= 2;
+			vodkaAlcoolismRate *= 2;
+			beerAlcoolismRate *= 2;
 			turboMode = true;
 //			Debug.Log ("Party Guy is drinking turbo mode");
 			ChangeLayer (1);
@@ -77,7 +78,8 @@ public class Party: Guest {
 //		Debug.Log ("Party Guy finished the joint");
 		weedParticles.gameObject.SetActive (false);
 		turboMode = false;
-		alcoolismRate /= 2;
+		beerAlcoolismRate /= 2;
+		vodkaAlcoolismRate /= 2;
 		state.Clear();
 		ResetAlcolismLevel(AlcolismResetLevel);
 		ChangeLayer (0);

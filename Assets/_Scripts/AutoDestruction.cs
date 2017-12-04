@@ -41,7 +41,7 @@ public class AutoDestruction : MonoBehaviour {
 		if (isVanishing == true) {
 			if (GetComponent<Renderer> () == true) {
 				if (GetComponent<Renderer> ().material.color.a > 0f) {
-					GetComponent<Renderer>().material.shader = Shader.Find("Transparent/Diffuse");
+					GetComponent<Renderer> ().material.shader = Shader.Find ("Transparent/Diffuse");
 					GetComponent<Renderer> ().material.color = new Color (GetComponent<Renderer> ().material.color.r, GetComponent<Renderer> ().material.color.g, GetComponent<Renderer> ().material.color.b, GetComponent<Renderer> ().material.color.a - (1f / vanishingDelay * Time.deltaTime));
 				} else {
 					TheEnd ();
@@ -49,6 +49,8 @@ public class AutoDestruction : MonoBehaviour {
 			} else {
 				TheEnd ();
 			}
+		} else {
+			GetComponent<Renderer> ().material.color = new Color (GetComponent<Renderer> ().material.color.r, GetComponent<Renderer> ().material.color.g, GetComponent<Renderer> ().material.color.b,1f);
 		}
 	}
 

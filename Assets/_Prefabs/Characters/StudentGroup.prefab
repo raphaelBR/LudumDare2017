@@ -473,7 +473,8 @@ MonoBehaviour:
   madSound: {fileID: 8300000, guid: 34176848da03a4246ab63ac8cb420afd, type: 3}
   alcoolismLevel: 0
   alcoolismLimit: 50
-  alcoolismRate: 10
+  beerAlcoolismRate: 5
+  vodkaAlcoolismRate: 8
   noDrinksMayhemLevel: 0
   thirstDelay: 17
   hungerDelay: 17
@@ -487,7 +488,7 @@ MonoBehaviour:
   weedBubble: {fileID: 0}
   madBubble: {fileID: 212342579037331964}
   unsatisfied: 0
-  mayhemIncreaseValue: 0.06
+  mayhemIncreaseValue: 0.5
   studentAlcolismLevel2: 70
   AlcolismResetLevel: 20
   pukeDelay: 5
@@ -4222,7 +4223,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 7a7521f1925ee2e4d9f110e2005d7fe3, type: 3}
+  m_Sprite: {fileID: 21300000, guid: c3fb797a3ad4e6045b41ae9dcf7cb081, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0

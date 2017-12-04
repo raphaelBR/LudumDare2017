@@ -416,7 +416,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bffc8ff9c03482049b498c30012fe2c5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  waitingDelayMin: 10
+  waitingDelayMin: 0.8
   waitingDelayMax: 15
   pukeSound: {fileID: 8300000, guid: 611dcffd4d78ca343a415961fb324a2a, type: 3}
   ganjaSound: {fileID: 8300000, guid: 746ae73541344ad4f88cf9eb1122cd52, type: 3}
@@ -424,7 +424,8 @@ MonoBehaviour:
   madSound: {fileID: 8300000, guid: 34176848da03a4246ab63ac8cb420afd, type: 3}
   alcoolismLevel: 0
   alcoolismLimit: 50
-  alcoolismRate: 10
+  beerAlcoolismRate: 5
+  vodkaAlcoolismRate: 8
   noDrinksMayhemLevel: 0
   thirstDelay: 15
   hungerDelay: 15
@@ -438,7 +439,7 @@ MonoBehaviour:
   weedBubble: {fileID: 212201767661738136}
   madBubble: {fileID: 0}
   unsatisfied: 0
-  mayhemIncreaseValue: 0.06
+  mayhemIncreaseValue: 0.8
   AlcolismResetLevel: 30
   partyGuyHighLevel: 70
   smokingTime: 5
@@ -4309,7 +4310,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 7a7521f1925ee2e4d9f110e2005d7fe3, type: 3}
+  m_Sprite: {fileID: 21300000, guid: c3fb797a3ad4e6045b41ae9dcf7cb081, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0

@@ -54,7 +54,8 @@ MonoBehaviour:
   MayhemBar: {fileID: 0}
   maxLevelMayhem: 1000
   animationSpeed: 0.2
-  pukeRatio: 0.05
+  pukeRatio: 0.5
+  timeText: {fileID: 0}
   juiceSource: {fileID: 0}
   beerSource: {fileID: 0}
   vodkaSource: {fileID: 0}

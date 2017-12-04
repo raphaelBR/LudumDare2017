@@ -50,7 +50,7 @@ MeshRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1238847983044510}
-  m_Enabled: 1
+  m_Enabled: 0
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
@@ -162,6 +162,7 @@ MonoBehaviour:
   chipsSpawnNumber: 10
   juiceSpawnNumber: 10
   pizzaSpawnNumber: 40
+  vodkaSpawnNumber: 40
   item: 3
   taking: 1
   mopDump: {fileID: 0}

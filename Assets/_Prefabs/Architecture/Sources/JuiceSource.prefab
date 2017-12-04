@@ -38,8 +38,8 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1950817087184954}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 22.56, y: 0, z: 0.35}
-  m_LocalScale: {x: 10, y: 1, z: 4}
+  m_LocalPosition: {x: 33.1, y: 0, z: 0.35}
+  m_LocalScale: {x: 8, y: 1, z: 4}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -50,7 +50,7 @@ MeshRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1950817087184954}
-  m_Enabled: 1
+  m_Enabled: 0
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
@@ -110,8 +110,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   beerSpawnNumber: 40
   chipsSpawnNumber: 10
-  juiceSpawnNumber: 10
+  juiceSpawnNumber: 100
   pizzaSpawnNumber: 40
+  vodkaSpawnNumber: 40
   item: 4
   taking: 1
   mopDump: {fileID: 0}

@@ -473,7 +473,7 @@ RectTransform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 70342999}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -423, y: 264.5, z: 0}
+  m_LocalPosition: {x: -306.5, y: 146.5, z: 0}
   m_LocalScale: {x: 0.5491763, y: 1, z: 1}
   m_Children:
   - {fileID: 1504728083}
@@ -793,15 +793,6 @@ Prefab:
       propertyPath: collidersList.Array.data[0]
       value: 
       objectReference: {fileID: 167576005}
-    - target: {fileID: 4928499723352174, guid: 924ee14dac2925642979fa209931aace, type: 2}
-      propertyPath: m_LocalScale.x
-      value: 8
-      objectReference: {fileID: 0}
-    - target: {fileID: 23429214184919320, guid: 924ee14dac2925642979fa209931aace,
-        type: 2}
-      propertyPath: m_Enabled
-      value: 0
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 924ee14dac2925642979fa209931aace, type: 2}
   m_IsPrefabParent: 0
@@ -33729,12 +33720,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   SCShader: {fileID: 4800000, guid: 71186b82ca7b7ee46955426d1f7a44a9, type: 3}
   ColorRGB: {r: 1, g: 1, b: 1, a: 1}
---- !u!114 &355915559 stripped
-MonoBehaviour:
-  m_PrefabParentObject: {fileID: 114565220529936758, guid: 305da2a6cdbfc694a9aec0efdbc2675f,
-    type: 2}
-  m_PrefabInternal: {fileID: 364998687}
-  m_Script: {fileID: 11500000, guid: 3918acf02662f8841a7cce519a83055a, type: 3}
 --- !u!1 &360816141
 GameObject:
   m_ObjectHideFlags: 0
@@ -33933,11 +33918,6 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 114123515891936032, guid: 305da2a6cdbfc694a9aec0efdbc2675f,
         type: 2}
-      propertyPath: gardenLimits
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 114123515891936032, guid: 305da2a6cdbfc694a9aec0efdbc2675f,
-        type: 2}
       propertyPath: kitchenLimits
       value: 
       objectReference: {fileID: 883157276}
@@ -33953,44 +33933,9 @@ Prefab:
       objectReference: {fileID: 360816145}
     - target: {fileID: 114123515891936032, guid: 305da2a6cdbfc694a9aec0efdbc2675f,
         type: 2}
-      propertyPath: quantityIncrement
-      value: 1.2
-      objectReference: {fileID: 0}
-    - target: {fileID: 114123515891936032, guid: 305da2a6cdbfc694a9aec0efdbc2675f,
-        type: 2}
-      propertyPath: delayIncrement
-      value: 0.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 114123515891936032, guid: 305da2a6cdbfc694a9aec0efdbc2675f,
-        type: 2}
-      propertyPath: studentPool
-      value: 
-      objectReference: {fileID: 1951562015}
-    - target: {fileID: 114123515891936032, guid: 305da2a6cdbfc694a9aec0efdbc2675f,
-        type: 2}
-      propertyPath: partyPool
-      value: 
-      objectReference: {fileID: 355915559}
-    - target: {fileID: 114123515891936032, guid: 305da2a6cdbfc694a9aec0efdbc2675f,
-        type: 2}
-      propertyPath: friendPool
-      value: 
-      objectReference: {fileID: 950428195}
-    - target: {fileID: 114123515891936032, guid: 305da2a6cdbfc694a9aec0efdbc2675f,
-        type: 2}
       propertyPath: tableLimits
       value: 
       objectReference: {fileID: 1359798594}
-    - target: {fileID: 114123515891936032, guid: 305da2a6cdbfc694a9aec0efdbc2675f,
-        type: 2}
-      propertyPath: spawnQuantity
-      value: 50
-      objectReference: {fileID: 0}
-    - target: {fileID: 114123515891936032, guid: 305da2a6cdbfc694a9aec0efdbc2675f,
-        type: 2}
-      propertyPath: spawnDelay
-      value: 3
-      objectReference: {fileID: 0}
     - target: {fileID: 114123515891936032, guid: 305da2a6cdbfc694a9aec0efdbc2675f,
         type: 2}
       propertyPath: background
@@ -34827,7 +34772,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: e355bb401e9f6b548a0fa1c48dd41b9c, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 0a2edd42cb940f647b5b73afa34a1b1e, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -35853,7 +35798,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1757d85ab3b1e7e4d803751522b6d52e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  beerSpawnNumber: 12
+  beerSpawnNumber: 50
   chipsSpawnNumber: 2
   juiceSpawnNumber: 8
   pizzaSpawnNumber: 10
@@ -36406,7 +36351,7 @@ RectTransform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 921565023}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -80.43, y: 309.5, z: 0}
+  m_LocalPosition: {x: 51.440002, y: 197.91, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 2016615198}
@@ -36415,8 +36360,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 426.57, y: -30}
-  m_SizeDelta: {x: 169.14, y: 49.36}
+  m_AnchoredPosition: {x: 441.94, y: -23.59}
+  m_SizeDelta: {x: 199.88, y: 36.54}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &921565025
 MonoBehaviour:
@@ -36621,12 +36566,6 @@ MeshFilter:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 929632517}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
---- !u!114 &950428195 stripped
-MonoBehaviour:
-  m_PrefabParentObject: {fileID: 114297868637763952, guid: 305da2a6cdbfc694a9aec0efdbc2675f,
-    type: 2}
-  m_PrefabInternal: {fileID: 364998687}
-  m_Script: {fileID: 11500000, guid: 3918acf02662f8841a7cce519a83055a, type: 3}
 --- !u!1001 &959929351
 Prefab:
   m_ObjectHideFlags: 0
@@ -36671,11 +36610,6 @@ Prefab:
       propertyPath: collidersList.Array.data[0]
       value: 
       objectReference: {fileID: 167576005}
-    - target: {fileID: 23410755627637386, guid: 28839c68af2124d478ed38056e749b76,
-        type: 2}
-      propertyPath: m_Enabled
-      value: 0
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 28839c68af2124d478ed38056e749b76, type: 2}
   m_IsPrefabParent: 0
@@ -37491,6 +37425,11 @@ Prefab:
       objectReference: {fileID: 2035317868}
     - target: {fileID: 114240866718262120, guid: ebd576efeede44c4384676d1c2cca2a8,
         type: 2}
+      propertyPath: timeText
+      value: 
+      objectReference: {fileID: 1504728084}
+    - target: {fileID: 114240866718262120, guid: ebd576efeede44c4384676d1c2cca2a8,
+        type: 2}
       propertyPath: juiceSource
       value: 
       objectReference: {fileID: 1746107751}
@@ -37524,21 +37463,6 @@ Prefab:
       propertyPath: pukeSource
       value: 
       objectReference: {fileID: 600074457}
-    - target: {fileID: 114240866718262120, guid: ebd576efeede44c4384676d1c2cca2a8,
-        type: 2}
-      propertyPath: pukeRatio
-      value: 0.01
-      objectReference: {fileID: 0}
-    - target: {fileID: 114240866718262120, guid: ebd576efeede44c4384676d1c2cca2a8,
-        type: 2}
-      propertyPath: maxLevelMayhem
-      value: 1000
-      objectReference: {fileID: 0}
-    - target: {fileID: 114240866718262120, guid: ebd576efeede44c4384676d1c2cca2a8,
-        type: 2}
-      propertyPath: timeText
-      value: 
-      objectReference: {fileID: 1504728084}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: ebd576efeede44c4384676d1c2cca2a8, type: 2}
   m_IsPrefabParent: 0
@@ -37637,7 +37561,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   phone: {fileID: 508530734}
-  cooldownDelay: 15
+  cooldownDelay: 20
 --- !u!82 &1138343189
 AudioSource:
   m_ObjectHideFlags: 0
@@ -38146,7 +38070,7 @@ MonoBehaviour:
   chipsSpawnNumber: 2
   juiceSpawnNumber: 8
   pizzaSpawnNumber: 10
-  vodkaSpawnNumber: 22
+  vodkaSpawnNumber: 30
   item: 6
   taking: 0
   mopDump: {fileID: 0}
@@ -41542,7 +41466,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   beerSpawnNumber: 6
   chipsSpawnNumber: 2
-  juiceSpawnNumber: 36
+  juiceSpawnNumber: 18
   pizzaSpawnNumber: 10
   vodkaSpawnNumber: 4
   item: 4
@@ -43224,12 +43148,6 @@ MeshFilter:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1948549738}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
---- !u!114 &1951562015 stripped
-MonoBehaviour:
-  m_PrefabParentObject: {fileID: 114908260548398818, guid: 305da2a6cdbfc694a9aec0efdbc2675f,
-    type: 2}
-  m_PrefabInternal: {fileID: 364998687}
-  m_Script: {fileID: 11500000, guid: 3918acf02662f8841a7cce519a83055a, type: 3}
 --- !u!1 &1956076992
 GameObject:
   m_ObjectHideFlags: 0
@@ -43667,7 +43585,7 @@ RectTransform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 2016615197}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 2.0999985, y: -0.8999996, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 921565024}
@@ -43675,8 +43593,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 160, y: 30}
+  m_AnchoredPosition: {x: 2.1, y: -0.9}
+  m_SizeDelta: {x: 188.45, y: 36.73}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2016615199
 MonoBehaviour:
@@ -43710,7 +43628,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Police alert
+  m_Text: Mayhem Meter
 --- !u!222 &2016615200
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -43727,12 +43645,12 @@ Prefab:
     - target: {fileID: 224353506877667374, guid: cdeae228ace00e44a90f471447dcf744,
         type: 2}
       propertyPath: m_LocalPosition.x
-      value: 507
+      value: 390.5
       objectReference: {fileID: 0}
     - target: {fileID: 224353506877667374, guid: cdeae228ace00e44a90f471447dcf744,
         type: 2}
       propertyPath: m_LocalPosition.y
-      value: 339.5
+      value: 221.5
       objectReference: {fileID: 0}
     - target: {fileID: 224353506877667374, guid: cdeae228ace00e44a90f471447dcf744,
         type: 2}
@@ -43833,6 +43751,17 @@ Prefab:
       propertyPath: m_RootOrder
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 114569513022871912, guid: cdeae228ace00e44a90f471447dcf744,
+        type: 2}
+      propertyPath: m_FillAmount
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114569513022871912, guid: cdeae228ace00e44a90f471447dcf744,
+        type: 2}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: d24913820d009c641b0f78b048143623,
+        type: 3}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: cdeae228ace00e44a90f471447dcf744, type: 2}
   m_IsPrefabParent: 0
@@ -44188,7 +44117,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   beerSpawnNumber: 12
-  chipsSpawnNumber: 10
+  chipsSpawnNumber: 18
   juiceSpawnNumber: 24
   pizzaSpawnNumber: 30
   vodkaSpawnNumber: 16

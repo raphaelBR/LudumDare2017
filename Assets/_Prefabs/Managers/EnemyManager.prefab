@@ -108,7 +108,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1065215615074104}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 10, y: 3, z: 1.75}
+  m_LocalPosition: {x: -8.32, y: 0, z: -26.52}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4049811967013718}
@@ -144,14 +144,16 @@ MonoBehaviour:
   friendPool: {fileID: 114297868637763952}
   studentPool: {fileID: 114908260548398818}
   partyPool: {fileID: 114565220529936758}
-  spawnQuantity: 1
-  spawnDelay: 3
-  quantityIncrement: -1
-  delayIncrement: 100
-  gardenLimits: {fileID: 0}
+  spawnQuantity: 3
+  spawnDelay: 5
+  quantityIncrement: 0.5
+  delayIncrement: 0.6
+  spawnMaximum: 50
   kitchenLimits: {fileID: 0}
   diningLimits: {fileID: 0}
   bedroomLimits: {fileID: 0}
+  tableLimits: {fileID: 0}
+  background: {fileID: 0}
 --- !u!114 &114297868637763952
 MonoBehaviour:
   m_ObjectHideFlags: 1
