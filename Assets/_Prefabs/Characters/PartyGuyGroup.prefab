@@ -440,7 +440,7 @@ MonoBehaviour:
   unsatisfied: 0
   mayhemIncreaseValue: 0.2
   AlcolismResetLevel: 30
-  partyGuyHighLevel: 100
+  partyGuyHighLevel: 70
   smokingTime: 5
   rollingTime: 3
 --- !u!114 &114199780890169930
